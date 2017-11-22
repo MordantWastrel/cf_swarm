@@ -1,5 +1,6 @@
 # Summary
 
-* [Preface: Stop Adopting Pets, or: Why "End to End?"](README.md)
-* [First Chapter](chapter1.md)
+* [Preface, About the Author, and License](README.md)
+* [Part 1: What You'll Need](part1-requirements/chapter1.md)    
+
 
