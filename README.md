@@ -5,9 +5,9 @@ One of the larger investments of time and resources at our company has always be
 At the [Coldfusion Summit](https://twitter.com/hashtag/CFSummit2017?src=hash) in November of 2017, at the end of a presentation given by Luis Majano \([@lmajano](https://twitter.com/lmajano)\)  at [Ortus Solutions](https://www.ortussolutions.com/) on an unrelated subject, he had a few minutes left and decided to containerize and deploy the demo application he'd written. He did so with time to spare, and we realized that we were past due in adopting this deployment strategy for our own applications.
 
 A previous presentation had included the below slide, originally from [@randybias](https://www.slideshare.net/randybias/the-cloud-revolution-cyber-press-forum-philippines) at Cloudscaling:
-<span align="center">
+
 ![](blob:https://www.gitbook.com/c702f400-4398-4c9d-90c5-44c8704717b4)
-</span>
+
   
 
 
