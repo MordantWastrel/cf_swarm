@@ -32,10 +32,6 @@ We began by looking for existing resources on cloud Coldfusion deployments. We a
 
 The foundation for this effort was the excellent [Docker Roadshow](https://www.ortussolutions.com/events/container-roadshow-2017) hosted by Ortus in September of 2017. Their work is the basis for this guide \(along with indispensable utilities like [Commandbox](https://www.ortussolutions.com/products/commandbox) and [CFConfig](https://www.forgebox.io/view/commandbox-cfconfig)\).  See Credits & Acknowledgments for the full list!
 
-## Why Docker?
-
-There are plenty of cloud deployment strategies in use today, and Docker is only one of them. We selected it as a Best Practice because it was the tool that most satisfied our requirements. \(link here\)
-
 # Why "End to End?"
 
 About forty miles west of us in Austin, Texas, there is a [bourbon distillery](http://www.garrisonbros.com/) where nearly the entire process takes place on the premises: they mix the mash, distill it, barrel it, age it, and finally bottle it all right there. Being able to see how everything works together makes it easier to understand every component, particularly if you go in not knowing anything about bourbon.  That's what we're trying to accomplish with this guide: provide enough detail so that you can reproduce and use the strategies we like while maintaining a sense of perspective on where each stage fits in the big picture.
