@@ -14,7 +14,7 @@ This guide is for you if:
 * You've heard of "containers" and perhaps Docker but you don't know a lot about them and what they can do for you
 * You want to modernize your infrastructure and you understand the principles of containerization, but aren't sure where to begin
 
-The guide assumes an intermediate level of familiarity with Coldfusion and server administration, but even if you're a beginner, we'll provide links to guides for topics we will mention but not cover in depth, like firewall administration or SSH key generation. 
+The guide assumes an intermediate level of familiarity with Coldfusion and server administration, but even if you're a beginner, we'll provide links to guides for topics we will mention but not cover in depth, like firewall administration or SSH key generation.
 
 # Why This Guide? or: Stop Adopting Pets
 
@@ -34,7 +34,7 @@ The foundation for this effort was the excellent [Docker Roadshow](https://www.o
 
 # Why "End to End?"
 
-About forty miles west of us in Austin, Texas, there is a [bourbon distillery](http://www.garrisonbros.com/) where nearly the entire process takes place on the premises: they mix the mash, distill it, barrel it, age it, and finally bottle it all right there. Being able to see how everything works together makes it easier to understand every component, particularly if you go in not knowing anything about bourbon.  That's what we're trying to accomplish with this guide: provide enough detail so that you can reproduce and use the strategies we like while maintaining a sense of perspective on where each stage fits in the big picture.
+About forty miles west of Austin, Texas, there is a [bourbon distillery](http://www.garrisonbros.com/) where nearly the entire process takes place on the premises: they mix the mash, distill it, barrel it, age it, and finally bottle it all right there. Being able to see how everything works together makes it easier to understand every component, particularly if you go in not knowing anything about bourbon.  That's what we're trying to accomplish with this guide: provide enough detail so that you can reproduce and use the strategies we like while maintaining a sense of perspective on where each stage fits in the big picture.
 
 There is already a great deal of information about Docker and Coldfusion on the 'net, and Adobe is working on an "official" CF Docker image. This guide borrows liberally from existing work \(with attribution\) but we don't have any religion about our choices: when possible, we've provided alternatives to our choices, and we're happy to hear from you if you think we've missed something.
 

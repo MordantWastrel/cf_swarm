@@ -6,7 +6,7 @@ One of the great things about containerized deployments is that you don't need v
 
 ## Requirement \#1: A Computer and an Internet Connection
 
-Neither of them have to be particularly good -- the heavy lifting will be done in the cloud. The requirements for local development \(running a CF engine and a database\) are greater than the requirements for managing your pipeline. For the purposes of this guide, we'll assume you have a local machine that can run your favorite CF Engine and RDBMS. We don't buy anything with less than 16 GB of RAM but you can certainly get started with less.
+Neither of them have to be particularly good -- the heavy lifting will be done in the cloud. The requirements for local development \(running a CF engine and a database\) are greater than the requirements for managing your pipeline. For the purposes of this guide, we'll assume you have a local machine that can run your favorite CF Engine and RDBMS. 
 
 ## Requirement \#2: A Small Amount of Money
 
