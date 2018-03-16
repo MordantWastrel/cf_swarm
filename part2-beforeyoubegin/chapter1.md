@@ -1,7 +1,5 @@
 # Part 2: Before You Begin
 
-This is the shortest section of the guide.
-
 One of the great things about containerized deployments is that you don't need very much to get started. The whole idea behind containers is that they're standardized, so even though you may have some customization to perform, you're not going to be reinventing any wheels.
 
 ## Requirement \#1: A Computer and an Internet Connection
@@ -16,9 +14,9 @@ Almost all of the action takes place at your cloud infrastructure provider, and 
 
 The current version of this guide targets Linux and uses NGINX as a front-end web server.
 
-While it is possible to get a Windows VM and run Docker on Windows \(and therefore to accomplish everything in this guide using Windows and IIS\), as yet the authors are not aware than anyone has actually done so. Theoretically, the only difference is in the Docker configuration portion, and that you're configuring IIS rather than NGINX. 
+While it is possible to get a Windows VM and run Docker on Windows \(and therefore to accomplish everything in this guide using Windows and IIS\), as yet the authors are not aware than anyone has actually done so. Theoretically, the only difference is in the Docker configuration portion, and that you're configuring IIS rather than NGINX.
 
-We will include references to Windows resources \(including a cloud infrastructure host that offers them\) and invite anyone who has been through this process with Windows and IIS to contribute to the guide.
+When possible, we include references to Windows resources \(including a cloud infrastructure host that offers them\) and we invite anyone who has been through this process with Windows and IIS to contribute to the guide.
 
 ## Requirement \#4: A \(Reasonably\) Modern CF Engine
 
