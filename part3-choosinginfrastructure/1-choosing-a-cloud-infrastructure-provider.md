@@ -18,6 +18,7 @@ Some providers offer additional features that can make our job easier. Several o
 3. **Provider-level Firewall**. While we will make use of OS-level firewalls, we have less to worry about if we can also apply templates defined at the provider level to our VMs.
 4. **Private Networking**. We can set up an internal VPN or firewall rules to enable our hosts to communicate with one another, but much like a provider-level Firewall, it will save us some time and complexity if it's already done for us.
 5. **Load Balancing**. Even if you're not yet concerned with scaling to handle heavy load, a provider that offers automated balancing between VMs will make this a trivial task when the time comes.
+6. **Object Storage**. While we'll want to keep our databases and web site media on block storage, object storage is great for storing anything that doesn't need the low latency of an enterprise application. Amazon's S3 is the most common example.
 
 ## Contenders: DigitalOcean, Vultr, Amazon, Or Anything Else
 
@@ -27,17 +28,17 @@ The point of this guide is not to anoint one or more providers as the best for C
 
 ### ![](/assets/digitalocean_1_390x195.png)
 
-DigitalOcean offers virtual machines \(called "droplets"\) with every one of the quality of life perks from our list.  All of the examples for the Linux sections of this guide will use DigitalOcean.
+DigitalOcean offers virtual machines \(called "droplets"\) with every one of the quality of life perks from our list.  All of the examples for the Linux sections of this guide will use DigitalOcean. 
 
 ### Windows Hosting: Vultr
 
 ### ![](/assets/Vultr-VPS-Review_00-300x190.jpg)
 
-Vultr's offers VMs with similar configurations and pricing to DigitalOcean, but they also offer Windows Server OS \(2012 and 2016\) . The only drawback to Vultr is that, as of March 2018, their block storage instances are regularly sold out. As an alternative, you can provision a separate cloud computing \(VC2\) instance just for storage. 
+Vultr's offers VMs with similar configurations and pricing to DigitalOcean, but they also offer Windows Server OS \(2012 and 2016\) . The only drawback to Vultr is that, as of March 2018, their block storage instances are regularly sold out. As an alternative, you can provision a separate cloud computing \(VC2\) instance just for storage.
 
 Vultr also offers several distributions of Linux, along with the ability to upload your own ISO, so it is by no means just for Windows users.
 
-### Linux-Only ... For Now
+### This Guide is Linux-Only ... For Now
 
-The current version of this guide does not cover a CF cloud deployment running on Windows and IIS.
+The current version of this guide does not cover a CF cloud deployment running on Windows and IIS, but only because the bulk of the authors' and contributors' experience with cloud hosting and Docker is using Linux. 
 

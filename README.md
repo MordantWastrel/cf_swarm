@@ -38,6 +38,12 @@ About forty miles west of Austin, Texas, there is a [bourbon distillery](http://
 
 There is already a great deal of information about Docker and Coldfusion on the 'net, and Adobe is working on an "official" CF Docker image. This guide borrows liberally from existing work \(with attribution\) but we don't have any religion about our choices: when possible, we've provided alternatives to our choices, and we're happy to hear from you if you think we've missed something.
 
+## Why "In a Day?"
+
+One of the barriers to adopting modern, best-practices hosting solutions is that many of us have already made investments in reliable, battle-tested \(if outdated\) infrastructure such that the notion of throwing it all out and starting over is prohibitive.
+
+One of the goals of this guide is to demonstrate that this is a problem of mindset rather than resources.  A single day is a little ambitious, but the individual steps don't require advanced training or expertise and you should be able to make it through each section in under an hour.
+
 # What You'll Have When You're Finished
 
 * A development environment you can use on Windows, MacOS, or Linux, and easily replicate for others
