@@ -19,5 +19,17 @@ Some providers offer additional features that can make our job easier. Several o
 4. **Private Networking**. We can set up an internal VPN or firewall rules to enable our hosts to communicate with one another, but much like a provider-level Firewall, it will save us some time and complexity if it's already done for us.
 5. **Load Balancing**. Even if you're not yet concerned with scaling to handle heavy load, a provider that offers automated balancing between VMs will make this a trivial task when the time comes.
 
+## Contenders: DigitalOcean, Vultr, Amazon, Or Anything Else
+
+The point of this guide is not to anoint one or more providers as the best for CF cloud deployment. There are so many providers in the market at similar price points that the "best practice" will come down to your needs and preferences. For our purposes, we've selected two providers based on our own research and recommendations from established users. While this guide will use their terminology and screenshot their utilities, almost all of the preparation and configuration will be similar \(control panels, networking, and provisioning\) or identical \(Docker configuration\).
+
+## Linux Hosting: DigitalOcean
+
+### ![](/assets/digitalocean_1_390x195.png)
+
+### Windows Hosting: Vultr
+
+### ![](/assets/Vultr-VPS-Review_00-300x190.jpg)
+
 
 
