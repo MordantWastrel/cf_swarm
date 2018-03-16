@@ -27,9 +27,17 @@ The point of this guide is not to anoint one or more providers as the best for C
 
 ### ![](/assets/digitalocean_1_390x195.png)
 
+DigitalOcean offers virtual machines \(called "droplets"\) with every one of the quality of life perks from our list.  All of the examples for the Linux sections of this guide will use DigitalOcean.
+
 ### Windows Hosting: Vultr
 
 ### ![](/assets/Vultr-VPS-Review_00-300x190.jpg)
 
+Vultr's offers VMs with similar configurations and pricing to DigitalOcean, but they also offer Windows Server OS \(2012 and 2016\) . The only drawback to Vultr is that, as of March 2018, their block storage instances are regularly sold out. As an alternative, you can provision a separate cloud computing \(VC2\) instance just for storage. 
 
+Vultr also offers several distributions of Linux, along with the ability to upload your own ISO, so it is by no means just for Windows users.
+
+### Linux-Only ... For Now
+
+The current version of this guide does not cover a CF cloud deployment running on Windows and IIS.
 
