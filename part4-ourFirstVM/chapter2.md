@@ -1,4 +1,4 @@
-# Your First VM: Basic Setup & Security
+# Your First Instance: Provisioning
 
 If you're already familiar with provisioning and configuring an instance \(droplet\) and just want to get to Docker, you can skip this section.
 
