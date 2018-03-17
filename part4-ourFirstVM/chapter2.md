@@ -14,7 +14,9 @@ Whether you're setting up your database server, a Docker server, or most anythin
 
 When you log in to your DigitalOcean account, you'll be greeted with an empty Droplet Management utility.
 
-**Note: **You will have supplied your provider with billing information by this stage so that you can spin up instances. Depending on how quickly you get through this guide, the total cost should be between **$5** and **$20**, depending on how diligent you are about taking snapshots and destroying your instances at the end of each day. So long as you've made it through the basic security section, you can save a 5-6 minutes each day by skipping the snapshot/destroy/re-create process for each of your instances.
+> #### Aside: Billing Expectations
+>
+> You will have supplied your provider with billing information by this stage so that you can spin up instances. Depending on how quickly you get through this guide, the total cost should be between **$5** and **$20**, depending on how diligent you are about taking snapshots and destroying your instances at the end of each day. So long as you've made it through the basic security section, you can save a 5-6 minutes each day by skipping the snapshot/destroy/re-create process for each of your instances.
 
 ![](/assets/snip_20180317095854.png)
 
