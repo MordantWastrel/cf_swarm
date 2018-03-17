@@ -1,6 +1,6 @@
 # Your First VM: Basic Setup & Security
 
-If you're already familiar with provisioning and configuring a VM \(droplet\) and just want to get to Docker, you can skip this section.
+If you're already familiar with provisioning and configuring an instance \(droplet\) and just want to get to Docker, you can skip this section.
 
 Whether you're setting up your database server, a Docker server, or most anything else, the initial setup is the same -- enough so that we'll create a snapshot once we're done and use that as our starting point for future droplets.
 
@@ -33,12 +33,10 @@ Keep the default selection of Ubuntu \(16.04 4 as of March 2018\). Select a **4 
 > #### Aside: Smaller Instance Sizes
 >
 > While you can set up MySQL, MSSQL, Docker, and CF on instances with less RAM, saving between **.8** and **1.5** cents per hour \(or **$5/mo\)** is not really worth sacrificing the resources -- in some cases, your services will need extra configuration to run with low memory, and we prefer "fast and simple" over having to add configuration that we'd then have to pull out when scaling up later anyway.
-
+>
 > #### Aside: Distributions Other than Ubuntu
 >
 > We use Ubuntu in this guide, but you can run everything you need for a CF pipeline on most distributions. If you select a distribution other than Ubuntu, check your provider or Google for links to configuration guides specific to your distribution.
-
-
 
 
 
