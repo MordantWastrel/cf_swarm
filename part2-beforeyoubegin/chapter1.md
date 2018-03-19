@@ -8,13 +8,13 @@ Neither of them have to be particularly good -- the heavy lifting will be done i
 
 ## Requirement \#2: A Small Amount of Money
 
-Almost all of the action takes place at your cloud infrastructure provider, and most of them bill for hourly usage. Your usage will not be very high, but you'll need a credit card on file with your provider. The VMs we'll be using to get started in this guide \(as of March 2018\) cost at most **30 cents/hour **or **$20/month**, and you'll be able to take snapshots at the end of the day and destroy the VM so that you are only paying for the time you're working through this guide. Snapshot storage at the provider we use is **5 cents per gigabyte per month**.
+Almost all of the action takes place at your cloud infrastructure provider, and most of them bill for hourly usage. Your usage will not be very high, but you'll need a credit card on file with your provider. The cloud computing instances we'll be using to get started in this guide \(as of March 2018\) cost at most **30 cents/hour **or **$20/month**, and you'll be able to take snapshots at the end of the day and destroy the instance so that you are only paying for the time you're working through this guide. Snapshot storage at the provider we use is **5 cents per gigabyte per month**.
 
 ## Requirement \#3: Linux \(...or Windows\)
 
 The current version of this guide targets Linux and uses NGINX as a front-end web server.
 
-While it is possible to get a Windows VM and run Docker on Windows \(and therefore to accomplish everything in this guide using Windows and IIS\), as yet the authors are not aware than anyone has actually done so. Theoretically, the only difference is in the Docker configuration portion, and that you're configuring IIS rather than NGINX.
+While it is possible to get a Windows instance and run Docker on Windows \(and therefore to accomplish everything in this guide using Windows and IIS\), as yet the authors are not aware than anyone has actually done so with a Coldfusion pipeline. Theoretically, the only difference is in the Docker configuration portion, and that you're configuring IIS rather than NGINX.
 
 When possible, we include references to Windows resources \(including a cloud infrastructure host that offers them\) and we invite anyone who has been through this process with Windows and IIS to contribute to the guide.
 

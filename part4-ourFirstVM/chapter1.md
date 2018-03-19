@@ -10,7 +10,7 @@ This guide will take the **Hybrid** approach. [As the pets/cattle slide says](/R
 
 > #### Aside: Instances or Droplets?
 >
-> The examples in this guide happen to use DigitalOcean, which refers to their cloud computing instances as "Droplets." When we use this term in an example or a screenshot, we're referring to what most other providers call "instances" or "cloud instances."  We'll typically say "Droplet" just so that the language in the guide agrees with the language in the screenshots.
+> The examples in this guide happen to use DigitalOcean, which refers to their virtual machine hosts as "Droplets." When we use this term in an example or a screenshot, we're referring to what most other providers call "cloud compute instances."  We'll typically say "an instance," but it's interchangable with "a Droplet" \(or "a Linode" if Linode is your provider\)
 
 
 
