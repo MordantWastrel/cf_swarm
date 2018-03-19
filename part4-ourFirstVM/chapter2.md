@@ -34,7 +34,7 @@ Keep the default selection of Ubuntu \(16.04 4 as of March 2018\). Select a **4 
 
 ### Don't Add Block Storage For Now
 
-Part of our deployment strategy will be to keep application data \(databases, web site media, or anything that isn't coming from a package manager or a repository\) on separate block storage, such that we can deploy new server instances for testing and then simply move the block storage from the old servers to the new ones when we're ready to go live without having to copy data between instances. 
+Part of our deployment strategy will be to keep application data \(databases, web site media, or anything that isn't coming from a package manager or a repository\) on separate block storage, such that we can deploy new server instances for testing and then simply move the block storage from the old servers to the new ones when we're ready to go live without having to copy data between instances.
 
 For the moment, we're just concerned with our "lowest common denominator" configuration -- authentication and security that will be the template for all our future instances. Block storage instances have specific names and each one can only be attached to a single compute instance, so we don't want instructions to mount this or that particular storage instance in our generic instance DNA.
 
@@ -46,7 +46,9 @@ Later on, once we have a snapshot of our generic instance and we're ready to dep
 
 > #### Aside: User Data and Cloud-Init
 >
-> The "User data" option is a very powerful tool that enables you to provide some basic scripting using YAML to create users, assign permissions, add SSH keys, and perform other "first boot" tasks. We'll be using a simpler mechanism to achieve the same result, which is a snapshot of our "basic template instance," but Cloud-init is much more flexible and lightweight. It's beyond the scope of this guide, but the more your basic server configuration changes \(like users coming and going\), the sooner you'll want a proper initialization like cloud-init.
+> The "User data" option is a very powerful tool that enables you to provide some basic scripting using YAML to create users, assign permissions, add SSH keys, and perform other "first boot" tasks. We'll be using a simpler mechanism to achieve the same result, which is a snapshot of our "basic template instance" after we've configured it, but Cloud-init is much more flexible and lightweight. It's beyond the scope of this guide, but the more your basic server configuration changes \(like users coming and going\), the sooner you'll want a proper initialization like cloud-init.
+>
+> Further Reading: DigitalOcean has [an introductory guide to cloud-config scripting.](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting)
 
 ### \(Optional\) Add SSH Keys
 
