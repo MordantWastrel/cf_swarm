@@ -58,5 +58,5 @@ If you've added SSH keys to your DigitalOcean account, you can specify one or mo
 
 ### Name It and Create It
 
-The default name for your instance is likely some combination of the OS, the datacenter, and the specs, e.g. **ubuntu-s-2vcpu-4gb-nyc1-01**. Use a naming scheme that makes sense to you and your team. Since this is our first droplet and we're going to clone it when we're ready to set up our services later on, we'll name it **Gavin;** after all, without Gavin, we wouldn't get very far.![](/assets/snip_20180319122143.png)
+The default name for your instance is likely some combination of the OS, the datacenter, and the specs, e.g. **ubuntu-s-2vcpu-4gb-nyc1-01**. Use a naming scheme that distinguishes the function and place in the pipeline. Since this is our first droplet and we're going to clone it when we're ready to set up our services later on, we'll name it **template**.![](/assets/snip_20180321094249.png)
 
