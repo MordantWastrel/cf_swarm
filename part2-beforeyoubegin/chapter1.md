@@ -14,7 +14,7 @@ Almost all of the action takes place at your cloud infrastructure provider, and 
 
 The current version of this guide targets Linux and uses NGINX as a front-end web server.
 
-While it is possible to get a Windows instance and run Docker on Windows \(and therefore to accomplish everything in this guide using Windows and IIS\), as yet the authors are not aware than anyone has actually done so with a Coldfusion pipeline. Theoretically, the only difference is in the Docker configuration portion, and that you're configuring IIS rather than NGINX.
+While it is possible to get a Windows instance and run Docker on Windows \(and therefore to accomplish everything in this guide using Windows and IIS\), as yet the authors are not aware of anyone that has actually done so with a Coldfusion pipeline. Theoretically, the only difference is in the Docker configuration portion, and that you're configuring IIS rather than NGINX. Both Windows Server 2019 and Java have prioritized Docker support, so we would expect that it will only get easier to maintain a Windows-based CF pipeline. We recommend making use of [Bilal's Boncode AJP Tomcat Connector](http://boncode.net/connector/webdocs/Tomcat_Connector.htm) for IIS regardless of whether you use Adobe CF or Lucee; the configuration footprint is less than Adobe's ISAPI-based connectors \(making containerization much easier\) and it performs very well besides.
 
 When possible, we include references to Windows resources \(including a cloud infrastructure host that offers them\) and we invite anyone who has been through this process with Windows and IIS to contribute to the guide.
 

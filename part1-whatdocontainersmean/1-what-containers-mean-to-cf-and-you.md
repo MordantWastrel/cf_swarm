@@ -14,15 +14,15 @@ While the bulk of the guide is dedicated to deploying a Coldfusion pipeline, the
 
 The most important concept is represented by the [Pets vs. Cattle](/README.md) cartoon in the Preface. Whether you're starting fresh or have to migrate a legacy "pets" server setup, you'll want to adopt a container-centered approach to your development: your application server \(and your front-end web server\) should be **replicable** and **undistinguished.  **That's not to say that they can't be **customized** for your applications; obviously, you'll have specific application and CF Admin settings, but you'll configure those customizations to apply automatically every time you start a new server.
 
-##### FAQ: I just need a place to run my application! Why should I bother with all this?
-
-Using containers is easier, faster, and cheaper in the long run. If you're accustomed to provisioning servers and anointing this or that server as "Production" versus "Staging" and then maintaining those servers, the biggest obstacle to an easier job is simply familiarity with a new set of tools and a few changes to development strategies, and that's what this guide is here to provide.
-
-In our shop, prior to our container/cloud migration, we'd been with the same hosting company for over ten years and we had a great relationship with them. They aggressively discounted their services and always responded to tickets promptly and courteously -- so much so that we held off exploring a container strategy simply because what we had "just worked" and all of our practices and training were centered on managing the pipeline that had served us well for so long. It took a lot to make us leave; the business case for containers had to be very strong.   It is.
+> #### Aside: I just need a place to run my application! Why should I bother with all this?
+>
+> Using containers is easier, faster, and cheaper in the long run. If you're accustomed to provisioning servers and anointing this or that server as "Production" versus "Staging" and then maintaining those servers, the biggest obstacle to an easier job is simply familiarity with a new set of tools and a few changes to development strategies, and that's what this guide is here to provide.
+>
+> In our shop, prior to our container/cloud migration, we'd been with the same hosting company for over ten years and we had a great relationship with them. They aggressively discounted their services and always responded to tickets promptly and courteously -- so much so that we held off exploring a container strategy simply because what we had "just worked" and all of our practices and training were centered on managing the pipeline that had served us well for so long. It took a lot to make us leave; the business case for containers had to be very strong.   It is.
 
 #### Cloud, Container, and Distributed: Different Concepts but Complementary
 
-##### FAQ: I don't need lots of Coldfusion servers. Just one! Isn't this "distributed cache" and "swarm" stuff for other people?
+What if you don't need more than one Coldfusion server? Isn't this "distributed cache" and "swarm" stuff for other people?
 
 If you're new to Docker, one area of confusion might be the common association between Docker, Cloud deployments, and "Distributed" or "Clustered" applications. The fact is that **you can use one or all of these concepts as part of your strategy without committing to all of them**.
 

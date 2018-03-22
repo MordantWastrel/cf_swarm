@@ -6,8 +6,14 @@
 * [Part 2: Before You Begin](part2-beforeyoubegin/chapter1.md)
 * [Part 3: Choosing a Cloud Infrastructure Provider](part3-choosinginfrastructure/1-choosing-a-cloud-infrastructure-provider.md)
 * [Part 4: Instance Setup \(How Many and What Kind\)](/part4-ourFirstVM/chapter1.md)
-  * [Your First Instance: Provisioning](part4-ourFirstVM/chapter2.md)
-  * [Your First Instance: Basic Configuration & Security](part4-ourFirstVM/chapter3.md)
+  * [Your First Instance: Provisioning](part4-ourFirstVM/chapter2-provisioning.md)
+  * [Your First Instance: Basic Configuration & Security](part4-ourFirstVM/chapter3-basicConfig.md)
+  * [Your First Instance: \(Optional\) Provider-Level Firewall](part4-ourFirstVM/chapter4-firewall.md)
+  * [Your First Instance: Taking A Snapshot](part4-ourFirstVM/chapter5-snapshot.md)
+* [Part 5: Database Setup](part5-Database/chapter1-dbIntro.md)
+  * [Database Setup: Instance Prep](part5-Database/chapter2-InstancePrep.md)
+  * [Database Setup: MySQL](part5-Database/chapter3-mysql.md)
+  * [Database Setup: Microsoft SQL Server](part5-Database/chapter4-mssql.md)
 * [Credits & Acknowledgments](credits.md)
 
 

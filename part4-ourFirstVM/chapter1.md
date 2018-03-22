@@ -12,5 +12,14 @@ This guide will take the **Hybrid** approach. [As the pets/cattle slide says](/R
 >
 > The examples in this guide happen to use DigitalOcean, which refers to their virtual machine hosts as "Droplets." When we use this term in an example or a screenshot, we're referring to what most other providers call "cloud compute instances."  We'll typically say "an instance," but it's interchangable with "a Droplet" \(or "a Linode" if Linode is your provider\)
 
+### In This Section, We Will...
+
+* Provision our first cloud compute instance
+* Add a basic, replicable configuration template: logins for ourselves \(and anyone else who should have access to all our instances\), public key configuration, disabling password logins, and basic UFW firewall setup
+* Test a provider-level firewall template to complement or individual instance security
+* Take a snapshot of our instance to use as a starting point for future instances
+
+
+
 
 

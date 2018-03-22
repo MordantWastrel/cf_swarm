@@ -6,7 +6,7 @@ Let's have a look at what we need, and then consider a few perks that will make 
 
 ## Requirements: What We Need in our Host
 
-1. **Detachable** **Block Storage**. While our code repositories will live in the Docker images on our cloud computing instance, we need someplace for static storage if our apps store files or media. Even if you keep files or archives on a separate provider like Amazon S3, it's still a good idea to have locally-accessible but persistent storage. It's possible to manage without separate and detachable block storage; you could, for example, simulate it by having a second VM with a networked file system. This guide will assume that you can mount such a volume as a trivial matter.
+1. **Detachable** **Block Storage**. While our code repositories will live in the Docker images on our cloud computing instance, we need someplace for static storage if our apps store files or media. Even if you keep files or archives on a separate provider like Amazon S3, it's still a good idea to have locally-accessible but persistent storage. Think of **Block Storage** like an external drive attached to your instance: it's separate, but can only be attached to one instance at a time. It's possible to manage without detachable block storage; you could, for example, simulate it by having a second VM with a networked file system, but dedicated block storage is likely to be faster and definitely easier to deal with. This guide will assume that you can mount such a volume as a trivial matter.
 2. **Docker**. You must be able to run Docker. Since Docker runs on most everything, this is an easy hurdle to clear. Most hosting providers offer instances with Docker pre-installed.
 
 ## Perks: Quality of Life and Ease of Administration
