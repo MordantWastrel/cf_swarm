@@ -12,9 +12,8 @@
   * [Your First Instance: Taking A Snapshot](part4-ourFirstVM/chapter5-snapshot.md)
 * [Part 5: Database Setup](part5-Database/chapter1-dbIntro.md)
   * [Database Setup: Instance Prep](part5-Database/chapter2-InstancePrep.md)
+  * [Database Setup: VPN Client](part5-Database/database-setup-vpn-client.md)
   * [Database Setup: MySQL](part5-Database/chapter3-mysql.md)
   * [Database Setup: Microsoft SQL Server](part5-Database/chapter4-mssql.md)
 * [Credits & Acknowledgments](credits.md)
-
-
 

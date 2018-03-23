@@ -1,16 +1,16 @@
 # Database Setup: Instance Preparation
 
-Before we install our preferred database software, a couple of tweaks to our basic instance template will help us with administration later on. 
+Before we install our preferred database software, a couple of tweaks to our basic instance template will help us with administration later on.
 
 ## Floating IPs: A Good Idea For Database Servers
 
 Every Droplet is assigned a unique IP address upon creation, but a [Blue/Green deployment strategy](http://searchitoperations.techtarget.com/definition/blue-green-deployment) requires the capacity to rapidly "re-point" our services -- for example, an upgrade to our database server software might put our application out of commission for half an hour, but if we can perform the upgrade on a separate instance and point our database IP at that instance, we can minimize or even eliminate downtime.
 
-Floating IPs are reserved IP addresses assigned to your account \(in this guide's case, our DigitalOcean account\) that you can assign to a droplet to provide some consistency in your DNS records, e.g. you want **db.mydomain.com** to point to your database droplet, but you want that droplet to have the same IP every time. 
+Floating IPs are reserved IP addresses assigned to your account \(in this guide's case, our DigitalOcean account\) that you can assign to a droplet to provide some consistency in your DNS records, e.g. you want **db.mydomain.com** to point to your database droplet, but you want that droplet to have the same IP every time.
 
-Navigate to the **Networking** menu and select **Floating IPs**. 
+Navigate to the **Networking** menu and select **Floating IPs**.
 
-![](/assets/snip_20180322132127.png)Select the database droplet you created in the previous step and **Assign Floating IP**. 
+![](/assets/snip_20180322132127.png)Select the database droplet you created in the previous step and **Assign Floating IP**.
 
 ## \(Optional\) Domain and DNS Control
 
@@ -30,4 +30,14 @@ This process is covered in detail in the [DigitalOcean tutorial for partitioning
 > If you followed the tutorial's advice and added the **nofail** option to **/etc/fstab**, you can detach the block storage volume from your instance and your OS will log an error at boot time but continue to boot without it.
 
 Now that we have an instance with dedicated block storage, let's install our RDBMS package.
+
+## MySQL, Microsoft SQL, or Other
+
+While this guide provides \(or links to\) specific setup instructions for MySQL and Microsoft SQL Server, there is very little difference with respect to the setup process outside of the configuration of the RDBMS platform you choose.
+
+* Install the package from the repository
+* Configure the installed RDBMS to use your block storage for database and log files
+* Create a provider-level Firewall rule that we'll use to allow other instances access to the database but block everyone else
+
+
 
