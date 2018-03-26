@@ -15,5 +15,6 @@
   * [Database Setup: VPN Client](part5-Database/database-setup-vpn-client.md)
   * [Database Setup: MySQL](part5-Database/chapter3-mysql.md)
   * [Database Setup: Microsoft SQL Server](part5-Database/chapter4-mssql.md)
+  * [Database Setup: Provider Firewall](part5-Database/chapter5-db-firewall.md)
 * [Credits & Acknowledgments](credits.md)
 

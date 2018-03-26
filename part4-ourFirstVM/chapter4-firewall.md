@@ -1,5 +1,7 @@
 ## \(Optional\) Provider-Level Firewall
 
+**Time Required: 5 Minutes**
+
 The Initial Server Setup guide enabled the [Uncomplicated Firewall](https://help.ubuntu.com/community/UFW) \(UFW\) to allow only SSH connections to our Droplet. We'll make further use of UFW later on, and you can use it extensively and exclusively -- but since we'd have to deal with UFW configuration on each and every Droplet, let's have a look at the provider-level Firewall tools.
 
 From your DigitalOcean account, select the **Networking** top menu and the **Firewalls** sub-menu. Select **Create Firewall**.
@@ -25,3 +27,4 @@ Your **Inbound Rules** section should look like this, only with your IP in place
 ![](/assets/snip_20180321110744.png)
 
 Once you have a Firewall setup you like, you can apply it to one or more Droplets at any time. You don't actually need to do this now, because we're going to be destroying our template droplet in a moment; but if you wanted to activate this configuration and save it for future Droplets, you'd enter their names at the bottom and select **Create Firewall**.![](/assets/snip_20180321111157.png)
+

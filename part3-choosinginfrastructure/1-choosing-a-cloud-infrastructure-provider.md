@@ -20,7 +20,7 @@ Some providers offer additional features that can make our job easier. Several o
 5. **Load Balancing**. Even if you're not yet concerned with scaling to handle heavy load, a provider that offers automated balancing between instances will make this a trivial task when the time comes.
 6. **Object Storage**. While we'll want to keep our databases and web site media on block storage, object storage is great for storing anything that doesn't need the low latency of an enterprise application. Amazon's S3 is the most common example.
 
-## Contenders: DigitalOcean, Vultr, Amazon, Or Anything Else
+## Contenders: DigitalOcean, Vultr, Amazon, Google Cloud, Or Anything Else
 
 The point of this guide is not to anoint one or more providers as the best for CF cloud deployment. There are so many providers in the market at similar price points that the "best practice" will come down to your needs and preferences. For our purposes, we've selected two providers based on our own research and recommendations from established users. While this guide will use their terminology and screenshot their utilities, almost all of the preparation and configuration will be similar \(control panels, networking, and provisioning\) or identical \(Docker configuration\).
 
@@ -38,11 +38,11 @@ Vultr's offers compute instances with similar configurations and pricing to Digi
 
 Vultr also offers several distributions of Linux, along with the ability to upload your own ISO, so it is by no means just for Windows users.
 
-### Honorable Mention: AWS / Amazon Lightsail, Linode
+### Honorable Mention: AWS / Amazon Lightsail, Linode, Google Cloud
 
 There are numerous other providers and if you already have one you like, you should stick with them provided that they meet the requirements and offer most of the perks from our list. [Linode](https://www.linode.com/) is a popular alternative, and there are [articles](https://www.mamboserver.com/digitalocean-alternatives/) published once or twice a year with a round-up of the market.
 
-If you already have experience or an investment in AWS, you have everything you need to proceed and there is likely no reason to start with a new provider. The only reason AWS is not used in this guide is because the Amazon ecosystem does so much more than we need for even a well-developed application development CF pipeline that the added learning curve puts it just out of reach for this guide.
+If you already have experience or an investment in AWS or Goolge Cloud, you have everything you need to proceed and there is likely no reason to start with a new provider. AWS is not used in this guide is because the Amazon ecosystem does so much more than we need for even a well-developed application development CF pipeline that the added learning curve puts it just out of reach for this guide. We found Google Cloud to have slightly less of a learning curve, but its pricing was not competitive with DigitalOcean or Vultr as of March 2018.
 
-An exception is [Amazon Lightsail](https://aws.amazon.com/lightsail/), which is a simplified offering based on specific AWS compute instances and some provider-level tools comparable to DigitalOcean and Vultr. If you know you're going to end up in the AWS ecosystem, consider starting with Lightsail rather than DigitalOcean or Vultr; like Vultr, Lightsail offers Windows instances. Amazon also offers block storage through their [Elastic Block Storage](https://aws.amazon.com/ebs/pricing/) service at a price point comparable to DigitalOcean.
+An exception is [Amazon Lightsail](https://aws.amazon.com/lightsail/), which is a simplified offering based on specific AWS compute instances and some provider-level tools \(and pricing\) comparable to DigitalOcean and Vultr. If you know you're going to end up in the AWS ecosystem, consider starting with Lightsail rather than DigitalOcean or Vultr; like Vultr, Lightsail offers Windows instances. Amazon also offers block storage through their [Elastic Block Storage](https://aws.amazon.com/ebs/pricing/) service at a price point comparable to DigitalOcean. Google Cloud also has both Windows instances and block storage.
 

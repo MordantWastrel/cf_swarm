@@ -1,5 +1,7 @@
 # Database Setup: Instance Preparation
 
+**Time Required: 5-10 Minutes \(depending on whether you use Domain/DNS control\)**
+
 Before we install our preferred database software, a couple of tweaks to our basic instance template will help us with administration later on.
 
 ## Floating IPs: A Good Idea For Database Servers
