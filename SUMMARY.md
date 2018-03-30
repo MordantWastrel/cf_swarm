@@ -16,5 +16,8 @@
   * [Database Setup: MySQL](part5-Database/chapter3-mysql.md)
   * [Database Setup: Microsoft SQL Server](part5-Database/chapter4-mssql.md)
   * [Database Setup: Provider Firewall](part5-Database/chapter5-db-firewall.md)
+* [Part 6: Container Strategy](part6-ContainerStrategy/chapter1-IntroToOrchestra.md)
 * [Credits & Acknowledgments](credits.md)
+
+
 
