@@ -15,8 +15,12 @@ DigitalOcean has an e[xcellent guide on setting up an OpenVPN Server](https://ww
 
 If you do use the latest OpenVPN release \(2.4 rather than 2.3 in the Ubuntu repository\), there are a few easy changes you can make for better performance:
 
-*  Replace **tls-auth ta.key 0** with **tls-crypt ta.key** on the server configuration and **&lt;tls-auth&gt;** with **&lt;tls-crypt&gt;** on the client configuration.
+* Replace **tls-auth ta.key 0** with **tls-crypt ta.key** on the server configuration and **&lt;tls-auth&gt;** with **&lt;tls-crypt&gt;** on the client configuration.
 * Replace **comp-lz0** with **compress lz4** on both the server and client configurations as **comp-lz0** is deprecated.
+
+> #### Aside: Quick 'n Dirty OpenVPN Install
+>
+> Nyr maintains a "Road Warrior" CLI [OpenVPN installation and management utility](https://github.com/Nyr/openvpn-install) that will get you up and running faster.
 
 # NeoRouter: Easy to Install, Ample Features, Slower
 
@@ -25,8 +29,6 @@ NeoRouter is simpler and easier to administer than OpenVPN, and while it doesn't
 > #### Aside: VPN Speed
 >
 > NeoRouter is much slower than OpenVPN, likely due to the age of the network driver used for their interface. DigitalOcean tests showed NeoRouter Pro p2p performance at around 9-18 Mbits/sec versus 189-240 MBits/sec for OpenVPN. If you just want a working VPN, NeoRouter will get you there a little faster, but OpenVPN may be a better investment of time in the long run.
-
-
 
 * [NeoRouter Client Installation Guide](http://www.neorouter.com/wiki/index.php/NeoRouterWiki:ClientSetup)
 * [NeoRouter Free/Mesh/Pro feature matrix](http://www.neorouter.com/compare)
