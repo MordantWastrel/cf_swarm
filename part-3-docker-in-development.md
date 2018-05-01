@@ -8,7 +8,7 @@ description: 'Local Installation and initial configuration (Time Required: 5 Min
 
 In this section, we'll install Docker, configure resource limits, and work with a **Docker Compose** file to configure containers for a database, a front-end web server, our Coldfusion application server, and \(optionally\) a dedicated cache.  By the end of this section, you should have a Docker environment ready to be deployed on any development machine, and that environment will look something like this:
 
-![Containerized CF Deployment Figure 3.1: Local Development](.gitbook/assets/cf-development-diagram.png)
+![Figure 3.1: Local Development Topology ](.gitbook/assets/cf-development-diagram.png)
 
 ## Get Docker
 
@@ -43,5 +43,5 @@ The default resource consumption parameters for Docker containers are that they 
 
 The default installation of Docker for Windows and Docker for Mac runs a  imposes significant limits on the MobyLinux VM. Since we will be running our CF engine, a database, a front-end web server, and \(optionally\) a cache server, we'll want to allocate additional RAM and CPU. 4 gigabytes of RAM and 1 CPU is probably sufficient, but it depends on how resource-hungry the applications you're developing are. If you have CPU cores or memory to spare, allocate as much as you'd like for your development environment.
 
-![Sam&apos;s Docker for Windows resource settings](.gitbook/assets/snip_20180501102036.png)
+![Figure 3.2: Sam&apos;s Docker for Windows Resource Settings](.gitbook/assets/snip_20180501102036.png)
 
