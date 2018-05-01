@@ -1,4 +1,4 @@
-# How Many Instances \(Droplets\)?
+# Part 4: Instance Setup \(How Many and What Kind\)
 
 Now that we have infrastructure ready for us in the cloud, we have to decide how much of it we need and what our network will look like. There isn't a single best answer, and we don't have the space here to cover even all the plausible scenarios. Instead, we'll stick to our "fast but powerful" mission and cook up a network that:
 
@@ -8,7 +8,7 @@ Now that we have infrastructure ready for us in the cloud, we have to decide how
 
 > #### Aside: Experimentation Is Rewarding
 >
-> One of the difficulties in generalizing a tutorial is glossing over some areas \(like infrastructure\) where there are a lot of great answers. We're constrained by our "...In Two Days" mission, but if you're not in a hurry, there's no reason you can't mix and match which services go in which instances, or containerize something for production that we don't. Even our choice of Ubuntu as OS is just a common denominator: there are a lot of exciting developments happening with lightweight, containerized deployments \(CoreOS and RancherOS, to name just two!\).  If you find a solution that works as well or better than anything in this guide and it's no more difficult to set up, let us know!
+> One of the difficulties in generalizing a tutorial is glossing over some areas \(like infrastructure\) where there are a lot of great answers. We're constrained by our "...In Two Days" mission, but if you're not in a hurry, there's no reason you can't mix and match which services go in which instances, or containerize something for production that we don't. Even our choice of Ubuntu as OS is just a common denominator: there are a lot of exciting developments happening with lightweight, containerized deployments \(CoreOS and RancherOS, to name just two!\). If you find a solution that works as well or better than anything in this guide and it's no more difficult to set up, let us know!
 
 ## Four Compute and Two Block Storage Instances: An Entry- to Mid-Level Network Layout
 
@@ -32,15 +32,15 @@ How do we determine which services to run through Docker and which to run native
 * **Maximum Pets: **We could drop Docker entirely and provision separate Droplets for each of our services: a database droplet, application \(CF\) droplets, and a front-end web droplet. 
 * **Hybrid: **We consider each part of our pipeline separately: for development, since we have to provide uniform environments to everyone on our team, we'll containerize everything. For production, we'll consider the cost \(in time and expertise\) of containerization versus the ease of management for services like our RDBMS and our front-end web server that won't need to scale as quickly as our application server will.
 
-This guide will take the **Hybrid** approach. [As the pets/cattle slide says](/README.md), "pets with strong configuration management are still needed." Unless we need a distributed database, docker-izing our RDBMS is overkill. We'll have to be sure to satisfy the "strong configuration management" piece, but for an introduction to Docker in a short amount of time, let's focus just on the application server and the front-end web server. For production, we'll only containerize Coldfusion and a cache \(like Redis or Couchbase\).
+This guide will take the **Hybrid** approach. [As the pets/cattle slide says](../), "pets with strong configuration management are still needed." Unless we need a distributed database, docker-izing our RDBMS is overkill. We'll have to be sure to satisfy the "strong configuration management" piece, but for an introduction to Docker in a short amount of time, let's focus just on the application server and the front-end web server. For production, we'll only containerize Coldfusion and a cache \(like Redis or Couchbase\).
 
 ### The Goal Line: Our Sample Network Diagram
 
-### ![](/assets/CF Swarm Generic.png) 
+![](../.gitbook/assets/cf-swarm-generic.png)
 
 > #### Aside: Instances or Droplets?
 >
-> The examples in this guide happen to use DigitalOcean, which refers to their virtual machine hosts as "Droplets." When we use this term in an example or a screenshot, we're referring to what most other providers call "cloud compute instances."  We'll typically say "an instance," but it's interchangable with "a Droplet" \(or "a Linode" if Linode is your provider\)
+> The examples in this guide happen to use DigitalOcean, which refers to their virtual machine hosts as "Droplets." When we use this term in an example or a screenshot, we're referring to what most other providers call "cloud compute instances." We'll typically say "an instance," but it's interchangable with "a Droplet" \(or "a Linode" if Linode is your provider\)
 
 ### In This Section, We Will...
 
@@ -48,6 +48,4 @@ This guide will take the **Hybrid** approach. [As the pets/cattle slide says](/R
 * Add a basic, replicable configuration template: logins for ourselves \(and anyone else who should have access to all our instances\), public key configuration, disabling password logins, and basic UFW firewall setup
 * Test a provider-level firewall template to complement or individual instance security
 * Take a snapshot of our instance to use as a starting point for future instances
-
-
 

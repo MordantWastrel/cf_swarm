@@ -12,11 +12,11 @@ When you log in to your DigitalOcean account, you'll be greeted with an empty Dr
 >
 > You will have supplied your provider with billing information by this stage so that you can spin up instances. Depending on how quickly you get through this guide, the total cost should be between **$5** and **$20**, depending on how diligent you are about taking snapshots and destroying your instances at the end of each day. So long as you've made it through the basic security section, you can save a 5-6 minutes each day by skipping the snapshot/destroy/re-create process for each of your instances.
 
-![](/assets/snip_20180317095854.png)
+![](../.gitbook/assets/snip_20180317095854.png)
 
 Select **Create Droplet** and let's deploy our first instance.
 
-### ![](/assets/snip_20180317103147.png)
+![](../.gitbook/assets/snip_20180317103147.png)
 
 > #### Aside: Distributions and One-Click Apps
 >
@@ -44,7 +44,7 @@ Later on, once we have a snapshot of our generic instance and we're ready to dep
 
 ### Datacenter Region: Geography with the Options You Need
 
-![](/assets/snip_20180319115731.png)For the purposes of this guide, all our instances will be deployed in the same datacenter. Be sure to select a datacenter that supports block storage, since we'll be adding it later. Also enable Private networking, and \(optionally\) monitoring. We can always activate Backups or IPV6 later.
+![](../.gitbook/assets/snip_20180319115731.png)For the purposes of this guide, all our instances will be deployed in the same datacenter. Be sure to select a datacenter that supports block storage, since we'll be adding it later. Also enable Private networking, and \(optionally\) monitoring. We can always activate Backups or IPV6 later.
 
 > #### Aside: User Data and Cloud-Init
 >
@@ -54,11 +54,11 @@ Later on, once we have a snapshot of our generic instance and we're ready to dep
 
 ### \(Optional\) Add SSH Keys
 
-#### ![](/assets/snip_20180319122105.png)
+![](../.gitbook/assets/snip_20180319122105.png)
 
 If you've added SSH keys to your DigitalOcean account, you can specify one or more of those keys here to grant them access to the root login. If you haven't been through this process, don't worry about it for now; the next section will guide you through it. If you do specify keys during this step, you'll use one of those keys to login as root; if not, you'll receive a password via email.
 
 ### Name It and Create It
 
-The default name for your instance is likely some combination of the OS, the datacenter, and the specs, e.g. **ubuntu-s-2vcpu-4gb-nyc1-01**. Use a naming scheme that distinguishes the function and place in the pipeline. Since this is our first droplet and we're going to clone it when we're ready to set up our services later on, we'll name it **template**.![](/assets/snip_20180321094249.png)
+The default name for your instance is likely some combination of the OS, the datacenter, and the specs, e.g. **ubuntu-s-2vcpu-4gb-nyc1-01**. Use a naming scheme that distinguishes the function and place in the pipeline. Since this is our first droplet and we're going to clone it when we're ready to set up our services later on, we'll name it **template**.![](../.gitbook/assets/snip_20180321094249.png)
 

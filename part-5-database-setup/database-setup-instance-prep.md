@@ -1,4 +1,4 @@
-# Database Setup: Instance Preparation
+# Database Setup: Instance Prep
 
 **Time Required: 5-10 Minutes \(depending on whether you use Domain/DNS control\)**
 
@@ -12,13 +12,13 @@ Floating IPs are reserved IP addresses assigned to your account \(in this guide'
 
 Navigate to the **Networking** menu and select **Floating IPs**.
 
-![](/assets/snip_20180322132127.png)Select the database droplet you created in the previous step and **Assign Floating IP**.
+![](../.gitbook/assets/snip_20180322132127.png)Select the database droplet you created in the previous step and **Assign Floating IP**.
 
 ## \(Optional\) Domain and DNS Control
 
 DigitalOcean and many other providers offer control panel access to domain and DNS settings. We recommend taking advantage of this free service so that you can assign DNS records to your instances. If you're just experimenting, you might [create a subdomain](http://help.dnsmadeeasy.com/view-tutorials/create-delegate-subdomain-managed-dns-domain/) like **cloud.mycompany.com** so that your DigitalOcean instances get the benefit of DNS without complicating your existing setup; but easier still to grab a custom domain and let DigitalOcean manage the DNS.
 
-## ![](/assets/snip_20180322132844.png)Attaching Block Storage
+## ![](../.gitbook/assets/snip_20180322132844.png)Attaching Block Storage
 
 Since we provisioned 20 GB of block storage when creating the database instance, it is already available to the instance, but the storage hasn't been partitioned, formatted, or mounted. We'll only need to partition and format the storage device once, but we want to auto-mount it every time we start our database droplet.
 
@@ -27,7 +27,7 @@ This process is covered in detail in the [DigitalOcean tutorial for partitioning
 * Which filesystem you want to use: and for database server storage, Ext4 is a fine choice. 
 * Where to mount the storage device: Let's use something context-appropriate and use **/mnt/db** as our mount point \(instead of the tutorial's example of **/mnt/volume-nyc1-01-part1\)**,  and then create two subfolders: database \(to hold our database files\) and logs \(to hold our database log files\)
 
-> #### Aside: The 'nofail' Option When Updating /etc/fstab if You Remove Block Storage
+> ### Aside: The 'nofail' Option When Updating /etc/fstab if You Remove Block Storage
 >
 > If you followed the tutorial's advice and added the **nofail** option to **/etc/fstab**, you can detach the block storage volume from your instance and your OS will log an error at boot time but continue to boot without it.
 
@@ -40,6 +40,4 @@ While this guide provides \(or links to\) specific setup instructions for MySQL 
 * Install the package from the repository
 * Configure the installed RDBMS to use your block storage for database and log files
 * Create a provider-level Firewall rule that we'll use to allow other instances access to the database but block everyone else
-
-
 

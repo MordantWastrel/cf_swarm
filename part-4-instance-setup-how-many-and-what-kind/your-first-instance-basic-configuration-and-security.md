@@ -1,4 +1,4 @@
-# Instance Configuration 101
+# Your First Instance: Basic Configuration & Security
 
 **Time Required: 5-15 Minutes, depending on familiarity with Linux server setup**
 
@@ -34,7 +34,7 @@ It's a short guide; don't skip any steps.
 
 Since we're building a template that we're going to re-use, it's a good idea to keep your OS packages current:
 
-```
+```text
 sudo apt-get update        # Fetches the list of available updates
 sudo apt-get upgrade       # Strictly upgrades the current packages
 ```
@@ -48,6 +48,4 @@ After completing the Initial Setup Guide, you'll have a cloud instance on the pu
 > If you followed the initial setup guide, then the Uncomplicated Firewall \(UFW\) is enabled on your template instance. We recommend doing so, but most of our Firewall rules in this guide will be configured on the provider-level rather than the instance-level for ease of replication and application management. Once we've done so, UFW is redundant, but that's the point; even though it's not our primary mechanism of refereeing who can access which services on our instances, we'll keep it as a backup.
 >
 > If you'd like to make better use of UFW \(either in addition to or instead of provider-level rules\), DigitalOcean has a good, basic tutorial for [UFW Essentials: Common Firewall Rules and Commands.](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
-
-
 

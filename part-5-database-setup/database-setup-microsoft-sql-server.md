@@ -1,4 +1,4 @@
-# Microsoft SQL Server 2017 \(Linux\)
+# Database Setup: Microsoft SQL Server
 
 Time Required: **10-15 Minutes \(Setup: 5-10 Minutes; Data Relocation: 5 Minutes\)**
 
@@ -7,7 +7,7 @@ While DigitalOcean doesn't have a tutorial for installing Microsoft SQL Server, 
 * [Microsoft SQL Server Linux Cloud Install Quickstart](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-clouds#digital-ocean), which covers provisioning for AWS, DigitalOcean, and Google Cloud; each of these then link to
 * [Microsoft SQL Server Ubuntu Quickstart Guide](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu)
 
-> #### Aside: Earlier Versions of Microsoft SQL Server \(or Windows-based SQL Installations\)
+> ### Aside: Earlier Versions of Microsoft SQL Server \(or Windows-based SQL Installations\)
 >
 > If you're not ready \(or licensed\) to use SQL Server 2017 or just don't want to run it on Linux, you'll need a Windows instance. Vultr, Google Cloud, and AWS \(or Lightsail\) all provide these for a marginal additional cost. Some Google-fu will suggest that you can puzzle your way through installing Windows with your own licensing on a DigitalOcean droplet, but as of March 2018 this is unsupported.
 >
@@ -21,10 +21,8 @@ Once you've completed the basic setup guide, you'll want to change the default f
 
 Most of our access control will come from the provider-level firewall rather than UFW, so for now we'll just open port 1433 \(and port 1434 for the admin console\) on UFW and deal with the bulk of the firewall rules in the next section.
 
-```
+```text
 sudo ufw allow 1433
 sudo ufw allow 1434
 ```
-
-
 
