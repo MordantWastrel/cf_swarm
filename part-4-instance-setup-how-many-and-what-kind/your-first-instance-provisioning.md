@@ -1,6 +1,6 @@
 # Your First Instance: Provisioning
 
-**Time Required: 5 Minutes **
+**Time Required: 5 Minutes** 
 
 If you're already familiar with provisioning and configuring an instance \(droplet\) and just want to get to Docker, you can skip this section.
 

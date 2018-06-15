@@ -16,7 +16,7 @@ Since we want a portable and easily-replicated database for our developers, we'l
 
 ## Provisioning From the Template
 
-We'll use the template we created in [Part 4](../part-4-instance-setup-how-many-and-what-kind/) as the foundation for our database droplet. Select **Create Droplet** and then the **Snapshots sub-menu. **The snapshot we created will be called **Ubuntu template** -- DigitalOcean prepends the snapshot name with the OS name, and **template** is the name we assigned, so our Create Droplets page should look like this:
+We'll use the template we created in [Part 4](../part-4-instance-setup-how-many-and-what-kind/) as the foundation for our database droplet. Select **Create Droplet** and then the **Snapshots sub-menu.** The snapshot we created will be called **Ubuntu template** -- DigitalOcean prepends the snapshot name with the OS name, and **template** is the name we assigned, so our Create Droplets page should look like this:
 
 ![](../.gitbook/assets/snip_20180322114159.png)
 
@@ -24,7 +24,7 @@ Select an instance size with at least 3 or 4 GB of RAM, and this time we're goin
 
 ![](../.gitbook/assets/snip_20180322124340.png)We'll put our database and log files on the block storage drive. It's trivial to enlarge block storage devices later, so unless you're importing existing databases, 20 GB should be more than enough for our initial database storage.
 
-Don't forget to enable **Private Networking **since we'll want our application server droplet\(s\) to access the database.
+Don't forget to enable **Private Networking** since we'll want our application server droplet\(s\) to access the database.
 
 Give your droplet a name like **database** and once it's ready, we'll learn how to assign a floating IP address and attach block storage to our instance.
 

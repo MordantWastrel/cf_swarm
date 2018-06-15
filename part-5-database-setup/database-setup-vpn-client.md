@@ -17,7 +17,7 @@ DigitalOcean has an e[xcellent guide on setting up an OpenVPN Server](https://ww
 
 If you do use the latest OpenVPN release \(2.4 rather than 2.3 in the Ubuntu repository\), there are a few easy changes you can make for better performance:
 
-* Replace **tls-auth ta.key 0** with **tls-crypt ta.key** on the server configuration and **&lt;tls-auth&gt;** with **&lt;tls-crypt&gt;** on the client configuration \(and in the **make\_config.sh **script\).
+* Replace **tls-auth ta.key 0** with **tls-crypt ta.key** on the server configuration and **&lt;tls-auth&gt;** with **&lt;tls-crypt&gt;** on the client configuration \(and in the **make\_config.sh** script\).
 * Replace **comp-lz0** with **compress lz4** on both the server and client configurations as **comp-lz0** is deprecated.
 
 > ### Aside: Quick 'n Dirty OpenVPN Install
