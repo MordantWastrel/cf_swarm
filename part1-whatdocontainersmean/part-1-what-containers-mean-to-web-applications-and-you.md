@@ -2,7 +2,7 @@
 
 ## Put On Your Hypervisor
 
-![](.gitbook/assets/53646903.jpg)
+![](    /assets/53646903.jpg)
 
 If you're reading this guide, you may already have some idea of the principles behind cloud hosting and containerized deployment. If these things still sound like buzzwords rather than concrete concepts, then it's a good idea to start with a brief introduction, like [A Beginner-Friendly Introduction to Containers, VMs and Docker](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b) by Preethi Kasireddy.
 

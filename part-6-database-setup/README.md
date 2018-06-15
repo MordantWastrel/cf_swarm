@@ -6,13 +6,11 @@ The first major component of our pipeline is our database server. We'll make use
 
 ### The Hybrid Approach: Why not Docker-ize the Database?
 
-Since our front-end web server and CF engine will both run in Docker and we know that we're going to invest some time into configuring at least one Docker instance anyway, why not do the same with the database?
+Since our front-end web server and CF engine will both run in Docker and we know that we're going to invest some time into configuring at least one Docker instance anyway, why not do the same with the database? Two reasons:
 
-The answer is that, while it's perfectly valid to run your database as a container, the up-front investment of time places it outside the scope of this guide. The benefits of containerizing your database for production systems are realized primarily when you need a distributed \(Master/Slave\) database, and that is a much later-stage scalability concern than our web and application servers that benefit from containerization on day one.
+1) When Docker Swarm containers access files from outside their containers, it uses NFS. This isn't a problem if our database files live in the container, but we want our databases to live on persistent storage (ideally, something separate even from the cloud instance, like a block storage device). That means that we can't guarantee that the databases will be on the same instance as the database container. Our database would then have to make network file system requests to read and write from the database. This problem isn't especially difficult to solve, but it's not really worth solving for our purposes; The up-front investment of time places it outside the scope of this guide, because...
 
-#### ...but we'll still containerize the database for Development.
-
-Since we want a portable and easily-replicated database for our developers, we'll use Docker in the Development stage of the pipeline later in the guide.
+2) The benefits of containerizing your database for production systems are realized primarily when you need a distributed \(Master/Slave\) database, and that is a much later-stage scalability concern than our web and application servers that benefit from containerization on day one.
 
 ## Provisioning From the Template
 
