@@ -31,7 +31,7 @@ While it's possible to deploy Adobe Coldfusion 9 or 10 with Commandbox and find 
 Better yet, since you're already upgrading your infrastructure, take advantage of your new pipeline to **upgrade your CF engine as well!**
 
 {% hint style='info' %}
- **\*Adobe Coldfusion 11 and 2016 Standard Note**
+ \* Adobe Coldfusion 11 and 2016 Standard Note
 
  As of June 2018, running any version of Adobe Coldfusion prior to 2018 through Commandbox  will cause CF to detect a "WAR deployment," which is only supported in the Enterprise edition. Furthermore, even if you do have an Enterprise license, Adobe has not yet clarified how \(or if\) these licenses translate to containerized usage, since you're likely to be running one CF instance per app rather than several apps on one "server."
 
