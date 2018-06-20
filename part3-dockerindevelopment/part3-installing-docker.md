@@ -3,7 +3,6 @@
 Local Installation and initial configuration (Time Required: 5 Minutes)
 {% endhint %}
 
-{% hint style="info" %}
 Familiarity with Docker is not a pre-requisite for this guide; you can simply follow the instructions and you'll acquire a basic understanding of how Docker works just by seeing it in action. Nevertheless, if you are able to invest some time up front into learning about Docker generally, you will have an easier time in the long run -- particularly in the later, Production sections.
 
 Our favorite Docker resources are:
@@ -41,7 +40,7 @@ The default installation of Docker for Windows and Docker for Mac imposes signif
 In your favorite terminal, run:
 ```docker version```
 
-If Docker is running correctly, you should see two results -- one for the engine (daemon) and one for the client:
+If Docker is running correctly, you should see two results -- one for the engine (server) and one for the client:
 
-![Figure 3.3: docker version](/assets/docker-version.PNG)
+![Figure 3.3: docker version](/assets/docker-version.png)
 
