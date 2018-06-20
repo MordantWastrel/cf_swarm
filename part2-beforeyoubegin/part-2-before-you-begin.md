@@ -30,11 +30,14 @@ While it's possible to deploy Adobe Coldfusion 9 or 10 with Commandbox and find 
 
 Better yet, since you're already upgrading your infrastructure, take advantage of your new pipeline to **upgrade your CF engine as well!**
 
-> **\*Adobe Coldfusion 11 and 2016 Standard Note**
->
-> As of June 2018, running any version of Adobe Coldfusion prior to 2018 through Commandbox  will cause CF to detect a "WAR deployment," which is only supported in the Enterprise edition. Furthermore, even if you do have an Enterprise license, Adobe has not yet clarified how \(or if\) these licenses translate to containerized usage, since you're likely to be running one CF instance per app rather than several apps on one "server." 
->
-> Prior to releasing this guide, we contacted Adobe to raise this issue in light of the ubiquity of Docker-based app deployments. They indicated that it would addressed during the CF 2018 beta, but it wasn't. They did make 2018 WAR deployments function with a Standard license, and now that Adobe has their own official Docker images, it's likely that some guidance will be forthcoming when CF 2018 is officially released.
->
-> For this reason, the primary recommended engine for this guide is Lucee 5, followed by Adobe Coldfusion 2018. Having said that, this is primarily a production consideration. It's quite easy to get ACF 11 and 2016 working for development or staging environments where licensing isn't an issue.
+{% hint style='info' %}
+ **\*Adobe Coldfusion 11 and 2016 Standard Note**
+
+ As of June 2018, running any version of Adobe Coldfusion prior to 2018 through Commandbox  will cause CF to detect a "WAR deployment," which is only supported in the Enterprise edition. Furthermore, even if you do have an Enterprise license, Adobe has not yet clarified how \(or if\) these licenses translate to containerized usage, since you're likely to be running one CF instance per app rather than several apps on one "server."
+
+ Prior to releasing this guide, we contacted Adobe to raise this issue in light of the ubiquity of Docker-based app deployments. They indicated that it would addressed during the CF 2018 beta, but it wasn't. They did make 2018 WAR deployments function with a Standard license, and now that Adobe has their own official Docker images, it's likely that some guidance will be forthcoming when CF 2018 is officially released.
+
+ For this reason, the primary recommended engine for this guide is Lucee 5, followed by Adobe Coldfusion 2018. Having said that, this is primarily a production consideration. It's quite easy to get ACF 11 and 2016 working for development or staging environments where licensing isn't an issue.
+{% endhint %}
+
 

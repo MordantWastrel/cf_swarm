@@ -1,12 +1,12 @@
-# Table of contents
+# Summary
 
 * [Preface: Who Is This Guide For?](README.md)
 * [About the Author & License](about-the-author-and-license.md)
 * [Part 1: What Containers Mean To Web Applications \(and You\)](part1-whatdocontainersmean/part-1-what-containers-mean-to-web-applications-and-you.md)
 * [Part 2: Before You Begin](part2-beforeyoubegin/part-2-before-you-begin.md)
 * [Part 3: Docker in Development](part3-dockerindevelopment/part-3-docker-in-development.md)
-  * [Managing Docker: Build vs. Deploy Repositories](part3-dockerindevelopment/part3-build-vs-deploy.md)
-  * [Installing Docker: Initial Setup](part3-dockerindevelopment/part3-installing-docker.md)]
+  * [Managing Docker: Build and Deploy Repositories](part3-dockerindevelopment/part3-build-vs-deploy.md)
+  * [Installing Docker: Initial Setup](part3-dockerindevelopment/part3-installing-docker.md)
 * [Part 4: Choosing a Cloud Infrastructure Provider](part4-choosinginfrastructure/part-4-choosing-a-cloud-infrastructure-provider.md)
 * [Part 5: Instance Setup \(How Many and What Kind\)](part-5-instance-setup/README.md)
   * [Your First Instance: Provisioning](part-5-instance-setup/1-provisioning.md)
@@ -21,3 +21,4 @@
   * [Database Setup: Provider Firewall](part-6-database-setup/database-setup-provider-firewall.md)
 * [Part 7: Container Strategy](part7-ContainerStrategy/part-7-container-strategy.md)
 * [Credits & Acknowledgments](credits-and-acknowledgments.md)
+
