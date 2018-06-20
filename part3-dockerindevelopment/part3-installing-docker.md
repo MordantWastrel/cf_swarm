@@ -1,4 +1,7 @@
 ## Get Docker
+{% hint style='tip' %}
+Local Installation and initial configuration (Time Required: 5 Minutes)
+{% endhint %}
 
 {% hint style="info" %}
 Familiarity with Docker is not a pre-requisite for this guide; you can simply follow the instructions and you'll acquire a basic understanding of how Docker works just by seeing it in action. Nevertheless, if you are able to invest some time up front into learning about Docker generally, you will have an easier time in the long run -- particularly in the later, Production sections.
@@ -29,7 +32,16 @@ Beginning with Windows Server 2016, Microsoft now natively supports Docker -- me
 
 The default resource consumption parameters for Docker containers are that they may use any and all CPU and memory resources available to them. On Linux \(or a native Windows Server 2016+\) Docker install, that's all of the resources on the host machine. On Docker for Windows or Docker for Mac, Docker runs inside a MobyLinux virtual machine, so containers may only make use of the resources you allocate to the VM in your Docker settings.
 
-The default installation of Docker for Windows and Docker for Mac runs a  imposes significant limits on the MobyLinux VM. Since we will be running our CF engine, a database, a front-end web server, and \(optionally\) a cache server, we'll want to allocate additional RAM and CPU. 4 gigabytes of RAM and 1 CPU is probably sufficient, but it depends on how resource-hungry the applications you're developing are. If you have CPU cores or memory to spare, allocate as much as you'd like for your development environment.
+The default installation of Docker for Windows and Docker for Mac imposes significant limits on the MobyLinux VM. Since we will be running our CF engine, a database, a front-end web server, and \(optionally\) a cache server, we'll want to allocate additional RAM and CPU. 4 gigabytes of RAM and 1 CPU is probably sufficient, but it depends on how resource-hungry the applications you're developing are. If you have CPU cores or memory to spare, allocate as much as you'd like for your development environment.
 
 ![Figure 3.2: Sam&apos;s Docker for Windows Resource Settings](/.gitbook/assets/snip_20180501102036.png)
+
+### Verify Your Docker Installation
+
+In your favorite terminal, run:
+```docker version```
+
+If Docker is running correctly, you should see two results -- one for the engine (daemon) and one for the client:
+
+![Figure 3.3: docker version](/assets/docker-version.PNG)
 
