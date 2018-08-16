@@ -15,6 +15,8 @@ Our favorite Docker resources are:
 
 Start by installing [Docker CE](https://store.docker.com/search?type=edition&offering=community) \(Community Edition\) on your machine.  It doesn't matter whether you're using a Windows PC, a Mac, or Linux; get the version of Docker appropriate to your OS. For local development, we like to use the Edge channel, which is a monthly release that has the latest features; however, nothing in this guide requires those and the Stable channel is fine if you prefer.
 
+Linux users can take advantage of the automated Docker install script at http://get.docker.com.
+
 {% hint style="info" %}
 ** Differences between Docker, Docker for Windows, and Docker for Mac**
 Docker under Linux is just called "Docker" and refers to the Docker daemon running in a "native" environment where it can share resources directly with the host without running a virtual machine. "Docker for Windows" and "Docker for Mac" will both run Linux Docker containers -- that's the point, after all -- but they rely on a small MobyLinux virtual machine to do so. This adds some performance overhead to your Docker containers (and requires you to allocate CPU cores, RAM, and disk space to your VM up front) but this is fine for development. You aren't meant to run Docker for Windows or Docker for Mac in a production environment.
