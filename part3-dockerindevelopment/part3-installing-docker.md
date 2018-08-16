@@ -49,7 +49,7 @@ Of course, if you're running "Docker native" (on Linux or Windows Server 2016+) 
 In your favorite terminal, run:
 ```docker version```
 
-If Docker is running correctly, you should see two results -- one for the engine (server) and one for the client:
+If Docker is running correctly, you should see two results -- one for the engine (server) and one for the client (except your '**version**' will be 18.06.0 or higher as of August 2018)
 
 ![Figure 3.3: docker version](/assets/docker-version.png)
 
