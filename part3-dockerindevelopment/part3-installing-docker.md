@@ -17,21 +17,27 @@ Start by installing [Docker CE](https://store.docker.com/search?type=edition&off
 
 Linux users can take advantage of the automated Docker install script at http://get.docker.com.
 
-{% hint style="info" %}
+
 ** Differences between Docker, Docker for Windows, and Docker for Mac**
-Docker under Linux is just called "Docker" and refers to the Docker daemon running in a "native" environment where it can share resources directly with the host without running a virtual machine. "Docker for Windows" and "Docker for Mac" will both run Linux Docker containers -- that's the point, after all -- but they rely on a small MobyLinux virtual machine to do so. This adds some performance overhead to your Docker containers (and requires you to allocate CPU cores, RAM, and disk space to your VM up front) but this is fine for development. You aren't meant to run Docker for Windows or Docker for Mac in a production environment.
+Docker under Linux is just called "Docker" and refers to two pieces:
+* The Docker daemon, running in a "native" environment where it can share resources directly with the host without running a virtual machine.
+* The Docker client, which handles your requests from the command line by authenticating and communicating with the Docker daemon.
+
+"Docker for Windows" and "Docker for Mac" have those same two pieces and will both run Linux Docker containers -- that's the point, after all -- but they rely on a small MobyLinux virtual machine to do so. This adds some performance overhead to your Docker containers (and requires you to allocate CPU cores, RAM, and disk space to your VM up front) but this is fine for development. You aren't meant to run Docker for Windows or Docker for Mac in a production environment.
 
 **Windows 10 Pro & Enterprise or Windows Server 2008+: Enable Hyper-V**
 
 Docker for Windows employs Hypervisor virtualization to run the MobyLinux VM. If you don't have Hyper-V support, or you are running Windows 7 or Windows 10 Home Edition, there are other options for running Docker \(either Virtualbox or Docker Toolbox\); please consult the [Docker for Windows Installation Guide](https://docs.docker.com/docker-for-windows/install/) for more information. This guide assumes you can install either Docker for Windows or Docker Toolbox. 
 
+{% hint style="info" %}
 **A Note on Docker for Windows and Windows Containers**
 
 Docker for Windows gives you a choice of using Linux Containers or Windows Containers. Select **Linux Containers**. If your pipeline was entirely windows-based, you would use Windows containers, but as of August 2018 this is possible but not yet advisable. The Commandbox image upon which this guide relies is Linux-based, and the authors have not tried containerizing IIS. This process is likely to become easier over the next year or so as Windows 2019 promises to focus on containers, but this guide doesn't ye\) cover a full-scale Windows production deployment. The authors use windows for development, but we'll want to use the same flavor of container everywhere in our pipeline, and that's Linux containers.
 
 **Windows Server 2016 & 2019**
 
-Beginning with Windows Server 2016, Microsoft now natively supports Docker -- meaning you can run "Docker" and don't need "Docker for Windows," as the later runs a tiny MobyLinux VM with a small amount of performance overhead to make everything work on Windows. If you're running Windows Server 2016+ for local development, you can use vanilla Docker. 
+Beginning with Windows Server 2016 and the Windows 10 Fall 2017 "Creators" update, Microsoft now natively supports Docker through Microsoft's "LCOW," or **L**inux **C**containers **O**n **W**indows on Docker 18.02 and later. This means that you can run "Docker" without the MobyLinux VM and don't need "Docker for Windows." For the time being, LCOW is still an experimental feature, and this guide will assume that Windows users are running Docker for Windows; but most everything should work just the same. As of the Spring of 2018, there were some issues with LCOW containers and hard memory limits that could interfere with some parts of this guide (particularly if you run SQL Server); but LCOW seems likely to become the standard for running Linux containers on Windows machines, whether in Development or Production.
+
 {% endhint %}
 
 ### \(Docker for Windows & Mac Only\) Configure Docker Resources
