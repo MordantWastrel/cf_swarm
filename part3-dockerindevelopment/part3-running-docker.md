@@ -29,7 +29,7 @@ It's not necessary to use any front-end server for local development; your favor
 * **Development should resemble Production**. It's unlikely that your production environment won't use a front end server, and we feel that having NGINX in front of your CF engine is the best practice for modern CF application development and deployment.
 
 #### What about Apache (or IIS?)
-While NGINX is very easy to learn, any front-end web server capable of a reverse proxy will get the job done. We don't recommend using IIS or any web server that can't be part of our Docker stack in development; while it's possible to expose your CF container(s) to a web server running on your host machine, that's beyond the scope of this guide for the time being. 
+While NGINX is very easy to learn, any front-end web server capable of a reverse proxy will get the job done. In this guide, we won't use IIS or any web server that can't be part of our Docker stack in development; while it's possible to expose your CF container(s) to any web server, that's beyond the scope of this guide for the time being. 
 {% endhint %}
 In your favorite terminal, `cd` into that directory and enter:
 
@@ -46,8 +46,7 @@ After Docker has pulled all the images it needs, it will start up three services
 NGINX is extraordinarily lightweight and will start up almost immediately. MySQL and Lucee may take 30-60 seconds the first time you run them; subsequent starts will be much faster since MySQL will not have to perform database initialization and Commandbox will already be "warmed up" and won't have to download Lucee or any of the application dependencies. 
 
 When Commandbox and your CF engine are ready, you'll see output similar to this in your terminal:
+![Figure 3.4: Commandbox Finishes Starting Up ](/assets/commandbox_ready.png)
 
-
-Now navigate to http://cfswarm-simple.localtest.me and you'll see one of two things:
-
-* **502 Bad Gateway** means that NGINX is unable to reach your CF container.
+Now navigate to http://cfswarm-simple.localtest.me and let's test our first application.
+![Figure 3.5: A simple CF page accesses our MySQL Database ](/assets/cfswarm-simple-one.png)
