@@ -17,7 +17,8 @@ Clone this repo into an empty directory:
 Before we start it up, let's take a look at what we have:
 
 * **/config**: This folder contains files we'll need at run-time when we spin up our containers. This is a convention we'll be using frequently in this guide. We'll put database connection details, CFConfig files, and (some) environment variables in this folder. Note that only the **cfml** folder has any contents -- our application is so simple that we're handling NGINX and MySQL configuration in our **docker-compose.yml** file, which we'll get to shortly. But it's a good idea to create a config folder for any container you plan on using regularly
-* **/app-one** and **/app-two**: These folders contain two sample applications: **app-one** showcases how simple a CF-in-Docker application can be. It creates a test database, adds a table, inserts a record, and then dumps that record; **app-two** takes advantage of Commandbox to deploy an entire application with just one file in the repository (**box.json**, which we'll also see more of later)
+* **/app-one** contains a sample aoplication making use of our datasource: it showcases how simple a CF-in-Docker application can be. It creates a test database, adds a table, inserts a record, and then dumps that record.
+* **app-two** contains just one file -- **box.json**. It takes advantage of Commandbox's ability to deploy an entire application. 
 * **/nginx** contains the virtual host definition files we need to proxy requests from our local machine to the CF container. It will become the **/etc/nginx** directory inside the NGINX container.
 
 {% hint style='info' %}
@@ -37,11 +38,11 @@ In your favorite terminal, `cd` into that directory and enter:
 
 Wait for Docker to pull the relevant images; this will be very fast on subsequent starts because Docker will use its local, cached version of the relevant images.
 
-After Docker has pulled all the images it needs, it will start up three services:
+After Docker has pulled all the images it needs, it will start up four services:
 
 - **MySQL** (with a `root` login set in the `docker-compose.yml` file and repeated in the `/config/cfml/simple-cfml.env` file
 - **NGINX**, configured to run **cfswarm.localtest.me** and **cfswarm-two.localtest.me** and reverse-proxy CFML requests to the third container:
-- **Commandbox and Lucee 5**, configured with a single datasource using the **cfconfig.json** file located in `/config/cfml/cfconfig`. 
+- Two instances of **Commandbox ruinning Lucee 5**, configured with a single datasource using the **cfconfig.json** file located in `/config/cfml/cfconfig`. 
 
 NGINX is extraordinarily lightweight and will start up almost immediately. MySQL and Lucee may take 30-60 seconds the first time you run them; subsequent starts will be much faster since MySQL will not have to perform database initialization and Commandbox will already be "warmed up" and won't have to download Lucee or any of the application dependencies. 
 
@@ -49,6 +50,12 @@ When Commandbox and your CF engine are ready, you'll see output similar to this 
 
 ![Figure 3.4: Commandbox Finishes Starting Up ](/assets/commandbox_ready.png)
 
-Now navigate to http://cfswarm-simple.localtest.me and let's test our first application.
+Now navigate to http://cfswarm-simple.localtest.me and let's test our first application:
 
 ![Figure 3.5: A simple CF page accesses our MySQL Database ](/assets/cfswarm-simple-one.png)
+
+Now navigate to http://cfswarm-two.localtest.me and let's test our second application:
+
+![Figure 3.6: Coldbox downloaded and deployed the application based off our box.json](/assets/cfswarm-simple-two.png)
+
+
