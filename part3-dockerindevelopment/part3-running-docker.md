@@ -58,4 +58,6 @@ Now navigate to http://cfswarm-two.localtest.me and let's test our second applic
 
 ![Figure 3.6: Coldbox downloaded and deployed the application based off our box.json](/assets/cfswarm-simple-two.png)
 
+Look again in your **app-two** folder and you'll see an entire application that wasn't there before. When Commandbox started the server, it read **box.json**, downloaded all the dependencies, and deployed them without our having to do anything.
 
+In the next section, we'll go step-by-step through the file that coordinates all of our services with Docker: **docker-compose.yml**.
