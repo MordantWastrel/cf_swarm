@@ -20,14 +20,14 @@ Linux users can take advantage of the automated Docker install script at http://
 
 ** Differences between Docker, Docker for Windows, and Docker for Mac**
 Docker under Linux is just called "Docker" and refers to two pieces:
-* The Docker daemon, running in a "native" environment where it can share resources directly with the host without running a virtual machine.
+* The Docker daemon (or "engine"), running in a "native" environment where it can share resources directly with the host without running a virtual machine.
 * The Docker client, which handles your requests from the command line by authenticating and communicating with the Docker daemon.
 
 "Docker for Windows" and "Docker for Mac" have those same two pieces and will both run Linux Docker containers -- that's the point, after all -- but they rely on a small MobyLinux virtual machine to do so. This adds some performance overhead to your Docker containers (and requires you to allocate CPU cores, RAM, and disk space to your VM up front) but this is fine for development. You aren't meant to run Docker for Windows or Docker for Mac in a production environment.
 
 **Windows 10 Pro & Enterprise or Windows Server 2008+: Enable Hyper-V**
 
-Docker for Windows employs Hypervisor virtualization to run the MobyLinux VM. If you don't have Hyper-V support, or you are running Windows 7 or Windows 10 Home Edition, there are other options for running Docker \(either Virtualbox or Docker Toolbox\); please consult the [Docker for Windows Installation Guide](https://docs.docker.com/docker-for-windows/install/) for more information. This guide assumes you can install either Docker for Windows or Docker Toolbox. 
+Docker for Windows employs Hypervisor virtualization to run the MobyLinux VM. If you don't have Hyper-V support, or it's disabled because you run VirtualBox, or you are running Windows 7 or Windows 10 Home Edition, there are other options for running Docker \(either Virtualbox or Docker Toolbox\); please consult the [Docker for Windows Installation Guide](https://docs.docker.com/docker-for-windows/install/) for more information. This guide assumes you can install either Docker for Windows or Docker Toolbox. 
 
 {% hint style="info" %}
 **A Note on Docker for Windows and Windows Containers**
