@@ -46,6 +46,6 @@ After Docker has pulled all the images it needs, it will start up three services
 NGINX is extraordinarily lightweight and will start up almost immediately. MySQL and Lucee may take 30-60 seconds the first time you run them; subsequent starts will be much faster since MySQL will not have to perform database initialization and Commandbox will already be "warmed up" and won't have to download Lucee or any of the application dependencies. 
 
 When Commandbox and your CF engine are ready, you'll see output similar to this in your terminal:
-![Figure 3.4: Commandbox Finishes Starting Up]<img src="/assets/commandbox_ready.png" width=915 height=198 />
+<img src="/assets/commandbox_ready.png" width=915 height=198 />
 Now navigate to http://cfswarm-simple.localtest.me and let's test our first application.
-![Figure 3.5: A simple CF page accesses our MySQL Database ](/assets/cfswarm-simple-one.png)
+<img src="/assets/cfswarm-simple-one.png" width="710" height="345">
