@@ -6,8 +6,8 @@
 * [Part 2: Before You Begin](part2-beforeyoubegin/part-2-before-you-begin.md)
 * [Part 3: Docker in Development](part3-dockerindevelopment/part-3-docker-in-development.md)
   * [Installing Docker: Initial Setup](part3-dockerindevelopment/part3-installing-docker.md)
-  * [Running Docker: Clone a Working Development Stack](part3-dockerindevelopment/part3-running-docker.md)
-  * [Line By Line: docker-compose.yml](part3-dockerindevleopment/part3-docker-compose.md)
+  * [Running Docker: Clone a Working Development Stack](part3-dockerindevelopment/part3-running-docker.md)e
+  * [docker-compose.yml: A Closer Look](part3-dockerindeveploment/part3-docker-compose.md)
   * [Managing Docker: Build and Deploy Repositories](part3-dockerindevelopment/part3-build-vs-deploy.md)
 * [Part 4: Choosing a Cloud Infrastructure Provider](part4-choosinginfrastructure/part-4-choosing-a-cloud-infrastructure-provider.md)
 * [Part 5: Instance Setup \(How Many and What Kind\)](part-5-instance-setup/README.md)
