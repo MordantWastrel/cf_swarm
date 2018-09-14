@@ -6,7 +6,7 @@ DigitalOcean provides an excellent [MySQL setup guide](https://www.digitalocean.
 
 Follow the guide exactly and do not skip any steps.
 
-{% hint style="info" %}
+{% hint style='info' %}
 ### Aside: Remote Root Logins
 
 One of the selections during the **mysql secure installation** script is an option to disable remote root logins to ensure that no-one can guess at the root password from the network. This is a good idea, but we'll want to block anyone not on our network \(whether a VPN, a work subnet, or just within our provider's network, e.g. other droplets\) from connecting at all. If we can do that, allowing remote root mysql logins is less bad.

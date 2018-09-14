@@ -2,7 +2,7 @@
 
 ## Put On Your Hypervisor
 
-![](.gitbook/assets/53646903%20%281%29.jpg)
+![](    /assets/53646903.jpg)
 
 If you're reading this guide, you may already have some idea of the principles behind cloud hosting and containerized deployment. If these things still sound like buzzwords rather than concrete concepts, then it's a good idea to start with a brief introduction, like [A Beginner-Friendly Introduction to Containers, VMs and Docker](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b) by Preethi Kasireddy.
 
@@ -12,9 +12,9 @@ While the bulk of the guide is dedicated to deploying a Coldfusion pipeline, the
 
 ## Nuts and Bolts for a CF Developer
 
-The most important concept is represented by the [Pets vs. Cattle](https://github.com/MordantWastrel/cf_swarm/tree/6b3706997cd5cdddc1cb3c97fc2c20b46ef3c105/part1-whatdocontainersmean/README.md) cartoon in the Preface. Whether you're starting fresh or have to migrate a legacy "pets" server setup, you'll want to adopt a container-centered approach to your development: your application server \(and your front-end web server\) should be **replicable** and **undistinguished.** That's not to say that they can't be **customized** for your applications; obviously, you'll have specific application and CF Admin settings, but you'll configure those customizations to apply automatically every time you start a new server.
+The most important concept is represented by the [Pets vs. Cattle](./) cartoon in the Preface. Whether you're starting fresh or have to migrate a legacy "pets" server setup, you'll want to adopt a container-centered approach to your development: your application server \(and your front-end web server\) should be **replicable** and **undistinguished.** That's not to say that they can't be **customized** for your applications; obviously, you'll have specific application and CF Admin settings, but you'll configure those customizations to apply automatically every time you start a new server.
 
-{% hint style="info" %}
+{% hint style='info' %}
 ### Aside: I just need a place to run my application! Why should I bother with all this?
 
 Using containers is easier, faster, and cheaper in the long run. If you're accustomed to provisioning servers and anointing this or that server as "Production" versus "Staging" and then maintaining those servers, the biggest obstacle to an easier job is simply familiarity with a new set of tools and a few changes to development strategies, and that's what this guide is here to provide.
