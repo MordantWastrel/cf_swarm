@@ -27,11 +27,12 @@ This process is covered in detail in the [DigitalOcean tutorial for partitioning
 * Which filesystem you want to use: and for database server storage, Ext4 is a fine choice. 
 * Where to mount the storage device: Let's use something context-appropriate and use **/mnt/db** as our mount point \(instead of the tutorial's example of **/mnt/volume-nyc1-01-part1\)**,  and then create two subfolders: database \(to hold our database files\) and logs \(to hold our database log files\)
 
-{% hint style='info' %}
+{% hint style="info" %}
 ### Aside: The 'nofail' Option When Updating /etc/fstab if You Remove Block Storage
 
 If you followed the tutorial's advice and added the **nofail** option to **/etc/fstab**, you can detach the block storage volume from your instance and your OS will log an error at boot time but continue to boot without it.
 {% endhint %}
+
 Now that we have an instance with dedicated block storage, let's install our RDBMS package.
 
 ## MySQL, Microsoft SQL, or Other

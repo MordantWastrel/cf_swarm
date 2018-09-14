@@ -8,7 +8,7 @@ From your DigitalOcean account, select the **Networking** top menu and the **Fir
 
 ![](../.gitbook/assets/snip_20180321104448.png)Let's create a simple Firewall rule to restrict SSH access to only our current public IP address.
 
-{% hint style='info' %}
+{% hint style="info" %}
 ## Aside: Illustration Purposes Only
 
 Limiting Droplet access to a single IP is not desirable in any real-world scenario; we're doing it only to illustrate an example of configuration control on the provider level. Keep in mind that your Droplet is always accessible via console from the DigitalOcean control panel regardless of your Firewall settings. Also, the template configuration we already have restricts everything except SSH connections, and that's "pretty secure"

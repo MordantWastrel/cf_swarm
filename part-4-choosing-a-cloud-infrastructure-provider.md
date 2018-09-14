@@ -1,4 +1,4 @@
-# Part 3: Choosing a Cloud Infrastructure Provider
+# Part 4: Choosing a Cloud Infrastructure Provider
 
 There are numerous "Infrastructure-as-a-Service" \(IaaS\) providers and many of them are sufficient for our needs. The requirements for this guide are rudimentary, so your selection may come down to personal preference or geography.
 
@@ -26,13 +26,13 @@ The point of this guide is not to anoint one or more providers as the best for C
 
 ### Linux Hosting: DigitalOcean
 
-![](/.gitbook/assets/digitalocean_1_390x195.png)
+![](.gitbook/assets/digitalocean_1_390x195.png)
 
 DigitalOcean offers cloud compute instances \(called "droplets"\) with every one of the quality of life perks from our list. All of the examples for the Linux sections of this guide \(which is currently all the sections\) will use DigitalOcean.
 
 ### Windows Hosting: Vultr
 
-![](/.gitbook/assets/vultr-vps-review_00-300x190.jpg)
+![](.gitbook/assets/vultr-vps-review_00-300x190.jpg)
 
 Vultr's offers compute instances with similar configurations and pricing to DigitalOcean, but they also offer Windows Server OS \(2012 and 2016\) . The only drawback to Vultr is that, as of March 2018, their block storage instances are regularly sold out. As an alternative, you can provision a separate cloud computing \(VC2\) instance just for storage, or else get on their notification list for storage instances -- you may only be waiting a couple of days.
 

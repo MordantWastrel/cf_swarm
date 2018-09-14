@@ -36,7 +36,7 @@ There is already a great deal of information about Docker and Coldfusion on the 
 
 One of the barriers to adopting modern, best-practices hosting solutions is that many of us have already made investments in reliable, battle-tested \(if outdated\) infrastructure such that the notion of throwing it all out and starting over is prohibitive.
 
-One of the goals of this guide is to demonstrate that this is a problem of mindset rather than resources. Many sections of the guide can be consumed in under an hour, and the major themes (e.g. a complete development environment) in under a day; you can go "end to end" (development to production) in about a week. The individual steps don't require advanced training or expertise.
+One of the goals of this guide is to demonstrate that this is a problem of mindset rather than resources. Many sections of the guide can be consumed in under an hour, and the major themes \(e.g. a complete development environment\) in under a day; you can go "end to end" \(development to production\) in about a week. The individual steps don't require advanced training or expertise.
 
 ## What You'll Have When You're Finished
 

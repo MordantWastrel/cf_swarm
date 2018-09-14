@@ -1,4 +1,4 @@
-# Part 4: Instance Setup \(How Many and What Kind\)
+# Part 5: Instance Setup \(How Many and What Kind\)
 
 Now that we have infrastructure ready for us in the cloud, we have to decide how much of it we need and what our network will look like. There isn't a single best answer, and we don't have the space here to cover even all the plausible scenarios. Instead, we'll stick to our "fast but powerful" mission and cook up a network that:
 
@@ -6,10 +6,10 @@ Now that we have infrastructure ready for us in the cloud, we have to decide how
 * Can be deployed fairly quickly with an enthusiast but not expert level of familiarity with system and network administration
 * Will provide us with the tools we'll need if and when we outgrow its limitations
 
-{% hint style='info' %}
- #### Aside: Experimentation Is Rewarding
+{% hint style="info" %}
+#### Aside: Experimentation Is Rewarding
 
- One of the difficulties in generalizing a tutorial is glossing over some areas \(like infrastructure\) where there are a lot of great answers. We're constrained by our "...In Two Days" mission, but if you're not in a hurry, there's no reason you can't mix and match which services go in which instances, or containerize something for production that we don't. Even our choice of Ubuntu as OS is just a common denominator: there are a lot of exciting developments happening with lightweight, containerized deployments \(CoreOS and RancherOS, to name just two!\). If you find a solution that works as well or better than anything in this guide and it's no more difficult to set up, let us know!
+One of the difficulties in generalizing a tutorial is glossing over some areas \(like infrastructure\) where there are a lot of great answers. We're constrained by our "...In Two Days" mission, but if you're not in a hurry, there's no reason you can't mix and match which services go in which instances, or containerize something for production that we don't. Even our choice of Ubuntu as OS is just a common denominator: there are a lot of exciting developments happening with lightweight, containerized deployments \(CoreOS and RancherOS, to name just two!\). If you find a solution that works as well or better than anything in this guide and it's no more difficult to set up, let us know!
 {% endhint %}
 
 ## Four Compute and Two Block Storage Instances: An Entry- to Mid-Level Network Layout
@@ -23,7 +23,7 @@ We have to give each of our component services a home, and we know that we can c
 
 We can stash these two services on one of our existing instances:
 
-* **\(Optional\) NFS Server**:  For low- to medium traffic sites, we can proxy every request from NGINX to our CF container(s) in the swarm; but we don't need CF containers to serve static assets, so it'd be nice for NGINX to handle this. We want our application servers to be able to share the block storage volume attached to our front end web servers. Setting up NFS to expose this volume to one or more application servers doesn't require significant time or resources; we'll put this on Instance 2 since that's where the storage volume is. 
+* **\(Optional\) NFS Server**:  For low- to medium traffic sites, we can proxy every request from NGINX to our CF container\(s\) in the swarm; but we don't need CF containers to serve static assets, so it'd be nice for NGINX to handle this. We want our application servers to be able to share the block storage volume attached to our front end web servers. Setting up NFS to expose this volume to one or more application servers doesn't require significant time or resources; we'll put this on Instance 2 since that's where the storage volume is. 
 * **\(Optional\) VPN Server**. Unless you have dozens or hundreds of clients connecting to your VPN, your VPN server will consume a negligible amount of resources.  We'll put a VPN server on Instance 3 with our swarm manager.
 
 ## Cows Per Instance: To Containerize Or Not To Containerize
