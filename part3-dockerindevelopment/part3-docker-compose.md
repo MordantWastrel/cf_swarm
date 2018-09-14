@@ -27,13 +27,25 @@ Let's go through each line of `docker-compose.yml`:
 ```
 version: '3.6'  # if no version is specificed then v1 is assumed. Recommend v2 minimum
 ```
+
 ### version (top-level)
 
 The **version* directive specifies the minimum version of Docker required to execute the file. Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release. 
 
 ```
 services:       
-  cfswarm-mysql:        # a friendly name. this is also DNS name inside network
+```
+### services (top-level) -- [ker Services vs. Docker Containers
+
+The **services** directive indicates that the next (first) level indentation will be the names of the services we're asking Docker to create. We can refer to these services through the Docker CLI via [docker service](https://docs.docker.com/engine/reference/commandline/service/) commands.
+
+For our purposes, the difference between a **container** and a **service** is simple: a container is a single "instance" of a service, but a service may be **replicated** more than once -- that is, it may have more than one container of the same type.
+
+You can have a container without a service, but every service needs a container.
+
+
+```
+    cfswarm-mysql:        # a friendly name. this is also DNS name inside network
     image: mysql:5.7
     container_name: cfswarm-mysql
     environment:
@@ -49,7 +61,8 @@ services:
       - 3306:3306
     networks:
         - cfswarm-simple
-  cfswarm-cfml:
+```
+    cfswarm-cfml:
     image: ortussolutions/commandbox:alpine
     container_name: cfswarm-cfml
     volumes:
