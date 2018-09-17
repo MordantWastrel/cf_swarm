@@ -59,7 +59,7 @@ In this case, we're specifying a service for our MySQL container. Note that the 
 {% hint style='tip' %}
 ### Why not 'mysql' instead of 'cfswarm-mysql?'
 
-You could name your service **MySQL**. You can name a service whatever you want, so long as it's unique on your Docker host. That's why we gave ours a more specific name -- so it wouldn't interfere with any services you might already have!
+You could name your service **mysql**. You can name a service whatever you want, so long as it's unique on your Docker host. That's why we gave ours a more specific name -- so it wouldn't interfere with any services you might already have!
 
 {% endhint %}
 
