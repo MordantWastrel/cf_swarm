@@ -56,7 +56,7 @@ The first level of indentation is reserved for service name definitions. Each se
 
 In this case, we're specifying a service for our MySQL container. Note that the service name is also the the DNS name: when our CF containers need to connect to MySQL, the hostname they'll use is **cfswarm-mysql**.
 
-{% hint-style='info' %}
+{% hint style='tip' %}
 ### Why not 'mysql' instead of 'cfswarm-mysql?'
 
 You could name your service **MySQL**. You can name a service whatever you want, so long as it's unique on your Docker host. That's why we gave ours a more specific name -- so it wouldn't interfere with any services you might already have!
