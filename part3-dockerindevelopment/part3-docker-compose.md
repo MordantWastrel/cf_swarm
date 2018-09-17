@@ -22,6 +22,9 @@ Your IDE should have a plugin to facilitate YAML syntax, like Visual Studio's [Y
 ## docker-compose up
 `docker-compose up` looks for a `docker-compose.yml` file in the current directory and translates the instructions in that file to a series of `docker run` CLI commands (behind-the-scenes; you won't see this part). The `stdout` output of each container will go to your console window unless you add the option`-d` for `--detach`(ed); that output will still be available to you in Docker's logs but you'll get your console back right away.
 
+### # Comments ahoy!
+Docker won't read anything after `#` in a compose file, so we can comment on the same line as our directives. 
+
 Let's go through each line of `docker-compose.yml`:
 
 ```
