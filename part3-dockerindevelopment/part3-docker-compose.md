@@ -81,21 +81,38 @@ If no registry address is specified, Docker will first check to see if the image
     container_name: cfswarm-mysql
 ```
 
-### container_name (2nd level -- optional)
+### container_name (2nd level)
 Without this directive, Docker will assign a randomly generated name to the container for our MySQL service. While it's easy to see the names of running containers with `docker container ls`, we want to be able to refer to our containers quickly and easily, whether we're outputting logs (`docker logs cfswarm-mysql`) or logging in to the container (`docker exec -it cfswarm-mysql bash`). 
 
 Note that you can only use the `container_name` directive when you have a single container in your service. If we were replicating our service -- running multiple containers in parallel -- `container_name` would be forbidden.
 
+```
 environment:
       MYSQL_ROOT_PASSWORD: 'myAwesomePassword'
       MYSQL_DATABASE: 'cfswarm-simple-dev'
       MYSQL_ROOT_HOST: '%'
       MYSQL_LOG_CONSOLE: 'true'
+```
+
+### environment (2nd level; variables on 3rd level)
+
+You can specify environment variables one-at-a-time in `docker-compose.yml`. These particular variables set the root password, create a database called `cfswarm-simple-dev` (if it doesn't already exist), routes the log to the console, and allows connections from any host. 
+
+```
     volumes:    
       - type: volume
         source: sql-data
         target: /var/lib/mysql
-    ports: 
+```
+
+### volumes (service-level: 2nd, 3rd, & 4th level)
+
+Since containers are stateless, anything in their filesystem will be destroyed when the container is destroyed. Stopping and restarting a container will preserve its filesystem, but we need to be able to destroy and re-create our MySQL container without losing our database. The solution is a `docker volume`, a virtual, persistent storage device managed by the Docker daemon. We can remove our container entirely and it will persist unless we explicitly delete the volume using `docker volume delete`.  The above example is a "long form" definition of a single volume:
+
+* **type** specifies a volume rather than a **bind mount**, which will mount a directory on the host into the container. We'll look at those shortly, but volumes perform much better than bind mounts and are the best choice for a database container. 
+* **source** refers to the name of a volume defined in the top-level **volumes** directive. Multiple containers can share the same volume, so we have 
+* **target** specifies the mount point in the container for the volume.
+        ports: 
       - 3306:3306
     networks:
         - cfswarm-simple
