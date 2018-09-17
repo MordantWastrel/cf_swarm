@@ -14,7 +14,7 @@ https://github.com/inLeagueLLC/simple-cfml-complete/blob/master/docker-compose.y
 {% hint style='info' %}
 ### What's a YML?
 
-A YML (or properly, 'YAML' for **Y**et **A**nother **M**arkup **L**anguage) file is just a text file with strict formatting rules that govern how the file is divided into sections and how one line relates to the next. YAML files use two spaces (not tabs) for each level of indentation, and Docker is very particular about YAML syntax. 
+A YML (or properly, 'YAML' for **Y**et **A**nother **M**arkup **L**anguage) file is just a text file with strict formatting rules that govern how the file is divided into sections and how one line relates to the next. YAML files use two spaces (not tabs) for each level of indentation, and Docker is very particular about YAML syntax. Throughout this guide, we'll refer to "levels" of indentation, e.g. "2nd level" would mean an indentation of four spaces.
 
 Your IDE should have a plugin to facilitate YAML syntax, like Visual Studio's [YAML](https://marketplace.visualstudio.com/items?itemName=adamvoss.yaml) by Adam Voss or Sublime Text's [Pretty YAML](https://packagecontrol.io/packages/Pretty%20YAML). 
 {% endhint %}
@@ -30,12 +30,12 @@ version: '3.6'  # if no version is specificed then v1 is assumed. Recommend v2 m
 
 ### version (top-level)
 
-The **version* directive specifies the minimum version of Docker required to execute the file. Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release. 
+The **version** directive specifies the minimum version of Docker required to execute the file. Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release. 
 
 ```
 services:       
 ```
-### services (top-level) -- [ker Services vs. Docker Containers
+### services (top-level) -- Docker Services vs. Docker Containers
 
 The **services** directive indicates that the next (first) level indentation will be the names of the services we're asking Docker to create. We can refer to these services through the Docker CLI via [docker service](https://docs.docker.com/engine/reference/commandline/service/) commands.
 
@@ -43,12 +43,43 @@ For our purposes, the difference between a **container** and a **service** is si
 
 You can have a container without a service, but every service needs a container.
 
+```
+  cfswarm-mysql:        # a friendly name. this is also DNS name inside network
+```
+
+### service name (1st level)
+
+The first level of indentation is reserved for service name definitions. Each service must have a unique name, and everything underneath it at the second or higher indentation level describes some aspect of the service. It's easy to break a docker compose file (or a docker stack file, as you'll see later) into digestible sections once you know how the file is divided.
+
+In this case, we're specifying a service for our MySQL container. Note that the service name is also the the DNS name: when our CF containers need to connect to MySQL, the hostname they'll use is **cfswarm-mysql**.
+
+{% hint-style='info' %}
+### Why not 'mysql' instead of 'cfswarm-mysql?'
+
+You could name your service **MySQL**. You can name a service whatever you want, so long as it's unique on your Docker host. That's why we gave ours a more specific name -- so it wouldn't interfere with any services you might already have!
+
+{% endhint %}
 
 ```
-    cfswarm-mysql:        # a friendly name. this is also DNS name inside network
     image: mysql:5.7
+```
+
+### Image (2nd level)
+
+Every container is created from an image, and this line specifies the image for our MySQL service:
+
+`[registry address]/[path-to-image]:[tag]`
+
+If no registry address is specified, Docker will first check to see if the image exists locally, and if it doesn't, pull the image from  [Docker Hub](http://hub.docker.com). Docker Hub allows unlimited storage of public images and is typically where you'll pull from unless and until you make your own images -- even then, those images usually extend public images from Docker Hub. 
+
+ If no tag is specified, Docker will default to pulling the `:latest` tag. This can have unintended consequences -- you might upgrade your database or your web server without realizing that you've done so. `:latest`  for MySQL is currently version 8, but we'll get MySQL 5.7 because we've specified that tag. The REEADME for a Docker image will usually document available tags (like the official [Docker Hub page for MySQL](https://hub.docker.com/_/mysql/) does, and a full list is often available under the **tags** link on that page.
+ 
+``` 
     container_name: cfswarm-mysql
-    environment:
+```
+
+###
+environment:
       MYSQL_ROOT_PASSWORD: 'myAwesomePassword'
       MYSQL_DATABASE: 'cfswarm-simple-dev'
       MYSQL_ROOT_HOST: '%'
