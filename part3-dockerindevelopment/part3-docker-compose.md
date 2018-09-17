@@ -64,7 +64,7 @@ You could name your service **MySQL**. You can name a service whatever you want,
     image: mysql:5.7
 ```
 
-### Image (2nd level)
+### image (2nd level)
 
 Every container is created from an image, and this line specifies the image for our MySQL service:
 
@@ -78,7 +78,11 @@ If no registry address is specified, Docker will first check to see if the image
     container_name: cfswarm-mysql
 ```
 
-###
+### container_name (2nd level -- optional)
+Without this directive, Docker will assign a randomly generated name to the container for our MySQL service. While it's easy to see the names of running containers with `docker container ls`, we want to be able to refer to our containers quickly and easily, whether we're outputting logs (`docker logs cfswarm-mysql`) or logging in to the container (`docker exec -it cfswarm-mysql bash`). 
+
+Note that you can only use the `container_name` directive when you have a single container in your service. If we were replicating our service -- running multiple containers in parallel -- `container_name` would be forbidden.
+
 environment:
       MYSQL_ROOT_PASSWORD: 'myAwesomePassword'
       MYSQL_DATABASE: 'cfswarm-simple-dev'
