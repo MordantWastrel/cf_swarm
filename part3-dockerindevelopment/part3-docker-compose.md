@@ -128,7 +128,7 @@ You can specify environment variables one-at-a-time in `docker-compose.yml`. The
 ```
 The above example is a "long form" definition of a single volume; the [compose reference](https://docs.docker.com/compose/compose-file/#volumes) explains the difference between the long and shorthand expression for the volume directive.
 
-* **type** specifies a volume rather than a **bind mount**, which will mount a directory on the host into the container. We'll look at those shortly, but volumes perform much better than bind mounts and are the best choice for a database container. 
+* **type** specifies a volume rather than a **bind mount**, which will mount a directory on the host into the container. Since volumes perform much better than bind mounts, they are the best choice for a database container. 
 * **source** refers to the name of a volume defined in the top-level **volumes** directive. Multiple containers can share the same volume, so we have 
 * **target** specifies the mount point in the container for the volume.
 
