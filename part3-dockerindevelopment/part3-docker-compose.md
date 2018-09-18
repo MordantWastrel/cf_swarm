@@ -1,8 +1,5 @@
 # docker-compose.yml: A Closer Look
-
-{% hint style='tip' %}
-A line-by-line breakdown of our sample Docker-in-Development Stack (Time Required: 10 Minutes)
-{% endhint %}
+### A line-by-line breakdown of our sample Docker-in-Development Stack (Time Required: 10 Minutes)
 
 {% hint style='info' %}
 Anyone working with Docker should bookmark the official reference document for `docker compose`: https://docs.docker.com/compose/compose-file/
@@ -27,18 +24,43 @@ Docker won't read anything after `#` in a compose file, so we can comment on the
 
 Let's go through each line of `docker-compose.yml`:
 
+### version (top level)
 ```
 version: '3.6'  # if no version is specificed then v1 is assumed. Recommend v2 minimum
 ```
 
-### version (top-level)
+### volumes (top level)
+```
+volumes:
+  sql-data:
+```
+Persistent storage is one of the more difficult concepts in Docker -- especially in a Swarm. We'll spend more time on this subject later, but for a simple development stack, it's a straightforward topic.
+
+Since containers are stateless, anything in their filesystem will be destroyed when the container is destroyed. Stopping and restarting a container doesn't destroy it (though in older versions of Docker, it used to); a simple restart will preserve its filesystem, but we need to be able to destroy and re-create our MySQL container without losing our database. The solution is a `docker volume`, a virtual, persistent storage device managed by the Docker daemon. We can remove our container entirely and it will persist unless we explicitly delete the volume using `docker volume delete`. 
+
+{% hint style='info' %}
+### Docker Volumes vs. Bind Mounts
+Some of the terminology around Docker volumes can be confusing. "Volumes" can refer to one of two things:
+
+* A [docker volume](https://docs.docker.com/storage/volumes/), which is a persistent data storage device managed entirely by the Docker daemon, or
+* The `volumes` directive in `docker compose` and `docker stack`, which governs both docker volumes and bind mounts. Both involve persistent storage, but a bind mount takes a directory that already exists on the host and mounts it into the container. This means that the host (rather than Docker) is managing the filesystem. Bind mounts are slower than docker volumes -- especially on Windows and MacOS. The benefit of bind mounts is that they allow for easy read and write access between the host and the container, which is what we want for a development environment; on a regular docker volume, you can only copy files between the host and the container through the `docker copy` command, unless your container supports some other form of file sharing (e.g. NFS). 
+
+{% endhint %}
+Every service that makes use of a volume will have a service-level `volumes` directive that specifies the source and target mount point for each volume it requires. 
+
+networks:
+  cfswarm-simple:
+secrets:
+  cfconfig:
+    file: ./config/cfml/cfconfig/cfconfig.json
+```
 
 The **version** directive specifies the minimum version of Docker required to execute the file. Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release. 
 
+### services (top-level) -- Docker Services vs. Docker Containers
 ```
 services:       
 ```
-### services (top-level) -- Docker Services vs. Docker Containers
 
 The **services** directive indicates that the next (first) level indentation will be the names of the services we're asking Docker to create. We can refer to these services through the Docker CLI via [docker service](https://docs.docker.com/engine/reference/commandline/service/) commands.
 
@@ -46,11 +68,13 @@ For our purposes, the difference between a **container** and a **service** is si
 
 You can have a container without a service, but every service needs a container.
 
+## MySQL Service
+Since our sample app needs a database, let's define that service first.
+
+### service name (1st level)
 ```
   cfswarm-mysql:        # a friendly name. this is also DNS name inside network
 ```
-
-### service name (1st level)
 
 The first level of indentation is reserved for service name definitions. Each service must have a unique name, and everything underneath it at the second or higher indentation level describes some aspect of the service. It's easy to break a docker compose file (or a docker stack file, as you'll see later) into digestible sections once you know how the file is divided.
 
@@ -63,11 +87,10 @@ You could name your service **mysql**. You can name a service whatever you want,
 
 {% endhint %}
 
-```
-    image: mysql:5.7
-```
-
 ### image (2nd level)
+```
+image: mysql:5.7
+```
 
 Every container is created from an image, and this line specifies the image for our MySQL service:
 
@@ -77,15 +100,16 @@ If no registry address is specified, Docker will first check to see if the image
 
  If no tag is specified, Docker will default to pulling the `:latest` tag. This can have unintended consequences -- you might upgrade your database or your web server without realizing that you've done so. `:latest`  for MySQL is currently version 8, but we'll get MySQL 5.7 because we've specified that tag. The REEADME for a Docker image will usually document available tags (like the official [Docker Hub page for MySQL](https://hub.docker.com/_/mysql/) does, and a full list is often available under the **tags** link on that page.
  
+### container_name (2nd level)
 ``` 
     container_name: cfswarm-mysql
 ```
 
-### container_name (2nd level)
 Without this directive, Docker will assign a randomly generated name to the container for our MySQL service. While it's easy to see the names of running containers with `docker container ls`, we want to be able to refer to our containers quickly and easily, whether we're outputting logs (`docker logs cfswarm-mysql`) or logging in to the container (`docker exec -it cfswarm-mysql bash`). 
 
 Note that you can only use the `container_name` directive when you have a single container in your service. If we were replicating our service -- running multiple containers in parallel -- `container_name` would be forbidden.
 
+### environment (2nd level; variables on 3rd level)
 ```
 environment:
       MYSQL_ROOT_PASSWORD: 'myAwesomePassword'
@@ -94,30 +118,54 @@ environment:
       MYSQL_LOG_CONSOLE: 'true'
 ```
 
-### environment (2nd level; variables on 3rd level)
-
 You can specify environment variables one-at-a-time in `docker-compose.yml`. These particular variables set the root password, create a database called `cfswarm-simple-dev` (if it doesn't already exist), routes the log to the console, and allows connections from any host. 
 
-```
-    volumes:    
-      - type: volume
-        source: sql-data
-        target: /var/lib/mysql
-```
-
 ### volumes (service-level: 2nd, 3rd, & 4th level)
-
-Since containers are stateless, anything in their filesystem will be destroyed when the container is destroyed. Stopping and restarting a container will preserve its filesystem, but we need to be able to destroy and re-create our MySQL container without losing our database. The solution is a `docker volume`, a virtual, persistent storage device managed by the Docker daemon. We can remove our container entirely and it will persist unless we explicitly delete the volume using `docker volume delete`.  The above example is a "long form" definition of a single volume:
+```
+volumes:
+- type: volume
+source: sql-data
+target: /var/lib/mysql
+```
+The above example is a "long form" definition of a single volume; the [compose reference](https://docs.docker.com/compose/compose-file/#volumes) explains the difference between the long and shorthand expression for the volume directive.
 
 * **type** specifies a volume rather than a **bind mount**, which will mount a directory on the host into the container. We'll look at those shortly, but volumes perform much better than bind mounts and are the best choice for a database container. 
 * **source** refers to the name of a volume defined in the top-level **volumes** directive. Multiple containers can share the same volume, so we have 
 * **target** specifies the mount point in the container for the volume.
-        ports: 
+
+Whenever you see a `volume` directive under a service, you'll know to look for a top-level volume configuration reference. Because volumes can be shared between services, only the service-specific information goes in the service-level definition.
+
+### ports [HOST:CONTAINER] (2nd & 3rd level)
+```
+    ports: 
       - 3306:3306
+```
+The `ports` directive maps one or more ports on the service container to the specified port on the host. In this example, we're mapping MySQL's port 3306 to the same port on our host. Without this directive, our other containers could access MySQL since they all share a `network`, but we wouldn't be able to connect to MySQL using any tools on our host unless we ran those tools in Docker as well. 
+
+{% hint style='tip' %}
+### ports (long form)
+Like `volumes` and some other `docker compose` directives, `ports` has both a short form (shown above) and a long form that can be easier to read. Here is the same directive in long form:
+```
+    ports:
+      - target: 3306
+        published: 8080
+        protocol: tcp
+        mode: host
+```
+As always, consult the [docker compose](https://docs.docker.com/compose/compose-file/#ports) reference for `ports` for the best, current information.
+{% endhint %} 
+
+### networks (2nd & 3rd level)
+```
     networks:
         - cfswarm-simple
 ```
-    cfswarm-cfml:
+Without the **networks** directive, `docker compose` will create a single network that is shared by all the services in your `compose` file that can be discovered and accessed by all the containers that belong to those services. That's exactly what we want, so all we're doing with this directive is specifying a name for that network. 
+
+## CF Engine Service
+Our CFML service definition uses some of the same directives as the `mysql` service, but but with a few alternatives and additions.
+```
+  cfswarm-cfml:
     image: ortussolutions/commandbox:alpine
     container_name: cfswarm-cfml
     volumes:
@@ -130,16 +178,50 @@ Since containers are stateless, anything in their filesystem will be destroyed w
       - source: cfconfig # this isn't really a secret but non-stack deploys don't support configs so let's make it one
         target: cfconfig.json
     networks:
-    - dev
-    depends_on:
-      - mssql
-      - nginx
-    networks:
         - cfswarm-simple
     depends_on:
       - cfswarm-mysql
       - cfswarm-nginx
-  cfswarm-nginx:
+```
+### volumes (bind mount)
+```
+    volumes:
+      - type: bind
+        source: ./app-one
+        target: /app
+```
+This directive is the same as our MySQL `volume`, but instead of letting Docker create and manage the volume, we're "binding" a directory on the host into the container. This is generally not suitable for production, but if we're actively developing an app then Docker isn't much use to us if we can't read and write to our app folder while it's running.
+
+### env_file (2nd & 3rd level)
+```
+    env_file:
+      - ./config/cfml/simple-cfml.env
+```
+In our MySQL service, we specified each environment variable on its own line. Since environment variables are likely to change more often than our service definitions, it's cleaner to store the environment variables in a separate file and just refer to that file in your `docker compose.yml`. The effect is the same -- the container created for your service doesn't care whether you put your environment variables in your compose file or somewhere else, but the best practice is to keep them separate.
+
+### secrets (2nd & 3rd level)
+```
+    secrets:
+      - source: cfconfig # this isn't really a secret but non-stack deploys don't support configs so let's make it one
+        target: cfconfig.json
+```
+Docker has two mechanisms to mount individual files into a container at runtime: **[configs](https://docs.docker.com/engine/swarm/configs/)** and **[secrets](https://docs.docker.com/engine/swarm/secrets/)**. They're very similar, but with two key distinctions:
+
+* `docker configs` are not (yet) supported by `docker compose` -- they're meant for `docker stack` deployments, which we'll use in production.
+* `docker secrets` are for files containing sensitive information: credentials, encryption keys, anything that you don't want to put somewhere easily accessible (such as an environment variable or a layer of your Docker image). These are meant to be supplied to Docker once and then referenced in deployments, rather than read from a file. 
+
+Our CFConfig JSON file doesn't have anything sensitive in it -- it defines a datasource but relies on environment variables for the credentials. We could have built our own Docker image and copied it directly into the image, but it's conceivable that different services might have different CFConfig options; we also want to be able to update CFConfig without rebuilding an entire image. A `config` is really what we need, but since it's not supported in `docker compose`, we'll use a `secret` instead. The syntax is nearly identical; much like `volumes` and `networks`, secrets can be shared between services, so this service-level definition only supplies the `source` (the name of the secret in the top-level `secrets` config and the name of the file to mount into the `/run/secrets` folder in our container. 
+
+### depends_on (2nd & 3rd level)
+```
+    depends_on:
+      - cfswarm-mysql
+      - cfswarm-nginx
+```
+**depends_on** tells `docker compose` that this service requires other services to be running before it can start. Since our CF engine isn't much use to us without NGINX and MySQL, `docker compose` will start these services prior to starting `cfswarm-cfml`. Note that Docker doesn't check to see if the services are actually ready -- health checks are more involved and beyond the scope of our development stack. Even so, we want Docker to bring up MySQL and NGINX before starting the CF container.
+
+```
+    cfswarm-nginx:
     image: nginx
     command: [nginx-debug, '-g', 'daemon off;']
     container_name: cfswarm-nginx
@@ -158,13 +240,5 @@ Since containers are stateless, anything in their filesystem will be destroyed w
         target: /etc/nginx
     networks:
       - cfswarm-simple
-
-volumes:
-  sql-data:
-networks:
-  cfswarm-simple:
-secrets:
-  cfconfig:
-    file: ./config/cfml/cfconfig/cfconfig.json
 ```
 

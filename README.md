@@ -6,7 +6,7 @@ This guide is for you if:
 
 * You manage or maintain Coldfusion applications \(or you want to\)
 * You've heard of containers and perhaps Docker but you don't know a lot about them and what they can do for you
-* You want to modernize your infrastructure and you understand the principles of containerization, but aren't sure where to begin
+* You want to modernize your infrastructure and you aren't sure where to begin
 
 The guide assumes an intermediate level of familiarity with Coldfusion and server administration, but even if you're a beginner, we'll provide links to guides for topics we will mention but not cover in depth, like firewall administration or SSH key generation.
 
