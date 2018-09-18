@@ -1,5 +1,5 @@
 # docker-compose.yml: A Closer Look
-### A line-by-line breakdown of our sample Docker-in-Development Stack (Time Required: 10 Minutes)
+### A line-by-line breakdown of our sample Docker-in-Development Stack (Time Required: 20 Minutes)
 
 {% hint style='info' %}
 Anyone working with Docker should bookmark the official reference document for `docker compose`: https://docs.docker.com/compose/compose-file/
