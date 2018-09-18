@@ -147,7 +147,7 @@ Like `volumes` and some other `docker compose` directives, `ports` has both a sh
 ```
     ports:
       - target: 3306
-        published: 8080
+        published: 3306
         protocol: tcp
         mode: host
 ```
