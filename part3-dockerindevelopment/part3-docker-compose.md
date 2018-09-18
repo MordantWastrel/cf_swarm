@@ -47,7 +47,7 @@ Some of the terminology around Docker volumes can be confusing. "Volumes" can re
 
 {% endhint %}
 Every service that makes use of a volume will have a service-level `volumes` directive that specifies the source and target mount point for each volume it requires. 
-
+```
 networks:
   cfswarm-simple:
 secrets:
