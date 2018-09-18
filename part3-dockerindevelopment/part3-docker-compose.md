@@ -28,6 +28,7 @@ Let's go through each line of `docker-compose.yml`:
 ```
 version: '3.6'  # if no version is specificed then v1 is assumed. Recommend v2 minimum
 ```
+The **version** directive specifies the minimum version of Docker required to execute the file. Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release. 
 
 ### volumes (top level)
 ```
@@ -54,8 +55,6 @@ secrets:
   cfconfig:
     file: ./config/cfml/cfconfig/cfconfig.json
 ```
-
-The **version** directive specifies the minimum version of Docker required to execute the file. Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release. 
 
 ### services (top-level) -- Docker Services vs. Docker Containers
 ```
