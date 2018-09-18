@@ -110,7 +110,7 @@ Note that you can only use the `container_name` directive when you have a single
 
 ### environment (2nd level; variables on 3rd level)
 ```
-environment:
+    environment:
       MYSQL_ROOT_PASSWORD: 'myAwesomePassword'
       MYSQL_DATABASE: 'cfswarm-simple-dev'
       MYSQL_ROOT_HOST: '%'
@@ -121,10 +121,10 @@ You can specify environment variables one-at-a-time in `docker-compose.yml`. The
 
 ### volumes (service-level: 2nd, 3rd, & 4th level)
 ```
-volumes:
-- type: volume
-source: sql-data
-target: /var/lib/mysql
+    volumes:
+    - type: volume
+     source: sql-data
+     target: /var/lib/mysql
 ```
 The above example is a "long form" definition of a single volume; the [compose reference](https://docs.docker.com/compose/compose-file/#volumes) explains the difference between the long and shorthand expression for the volume directive.
 
