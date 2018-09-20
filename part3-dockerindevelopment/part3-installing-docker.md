@@ -10,7 +10,7 @@ Familiarity with Docker is not a pre-requisite for this guide; you can simply fo
 Our favorite Docker resources are:
 
 * The [Udemy Docker Mastery course](https://udemy.com/docker-mastery/) by Bret Fisher -- it can be completed in a week or less and is one of the best and most accessible entry points for the Docker universe.
-* The Ortus Container Roadshow from 2017, which covers containerizing CF more specifically
+* The [Ortus Container Roadshow](https://www.ortussolutions.com/events/container-roadshow-2017) from 2017, which covers containerizing CF more specifically
 {% endhint %}
 
 Start by installing [Docker CE](https://store.docker.com/search?type=edition&offering=community) \(Community Edition\) on your machine.  It doesn't matter whether you're using a Windows PC, a Mac, or Linux; get the version of Docker appropriate to your OS. For local development, we like to use the Edge channel, which is a monthly release that has the latest features; however, nothing in this guide requires those and the Stable channel is fine if you prefer.
