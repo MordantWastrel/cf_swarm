@@ -31,6 +31,10 @@ It's not necessary to use any front-end server for local development; your favor
 
 #### What about Apache (or IIS?)
 While NGINX is very easy to learn, any front-end web server capable of a reverse proxy will get the job done. In this guide, we won't use IIS or any web server that can't be part of our Docker stack in development; while it's possible to expose your CF container(s) to any web server, that's beyond the scope of this guide for the time being. 
+
+#### (Adobe Only) What about Connectors?
+
+If there's a reason to bother with Adobe's connectors in a Docker deployment (even their now two-year-old [NGINX Connector 'Prerelease'](https://coldfusion.adobe.com/2016/10/prerelease-build-of-nginx-connector-for-coldfusion-2016-now-available/), I'm not aware of it. A reverse proxy does the same job with fewer moving parts.
 {% endhint %}
 In your favorite terminal, `cd` into that directory and enter:
 
