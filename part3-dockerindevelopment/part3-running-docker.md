@@ -7,7 +7,7 @@ Understand What's Going On (Time Required: 15 Minutes)
 ## Clone Our Sample Repo
 You only need two things to start working with our sample CF Development stack:
 
-- A working Docker installation and (free) Docker Hub account (from the previous steps)
+- A working Docker installation and (free) [Docker Hub](https://hub.docker.com) account (from the previous steps)
 - On your host machine, make sure nothing is running on ports 80, 443, or 3306 (so shut down any web servers or MySQL servers running in or out of Docker that use those ports)
 
 Clone this repo into an empty directory: 
