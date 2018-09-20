@@ -31,10 +31,6 @@ The glue that holds all the pieces together in any CF deployment is Commandbox w
 * Lucee 5
 * Railo 4.x
 
-While it's possible to deploy Adobe Coldfusion 9 or 10 with Commandbox and find workarounds for using CFConfig, doing so is a tremendous amount of extra work and beyond the scope of this guide. If you need to deploy one of these engines, you may be better served [contacting Ortus](https://www.ortussolutions.com/#contact) and sponsoring official ACF9 or ACF10 support in CFConfig rather than trying to navigate hacking XML files into your Docker image.
-
-Better yet, since you're already upgrading your infrastructure, take advantage of your new pipeline to **upgrade your CF engine as well!**
-
 > **\*Adobe Coldfusion Note**
 >
 > As of August 2018, running any version of Adobe Coldfusion  through Commandbox  will cause CF to detect a "WAR deployment," which is only supported in the Enterprise edition. Furthermore, even if you do have an Enterprise license, Adobe's licensing scheme (even for 2018) is "one license, one container." This issue was [raised during the Public Beta for CF 2018](https://coldfusion.adobe.com/discussion/2479279/) but Adobe declined to address it. They had previously suggested that WAR deployments would not automatically be forced into Enterprise mode for 2018 but that does not appear to have materialized.
