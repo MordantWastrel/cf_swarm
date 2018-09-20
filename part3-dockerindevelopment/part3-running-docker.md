@@ -18,7 +18,7 @@ Before we start it up, let's take a look at what we have:
 
 * **/config**: This folder contains files we'll need at run-time when we spin up our containers. This is a convention we'll be using frequently in this guide. We'll put database connection details, CFConfig files, and (some) environment variables in this folder. Note that only the **cfml** folder has any contents -- our application is so simple that we're handling NGINX and MySQL configuration in our **docker-compose.yml** file, which we'll get to shortly. But it's a good idea to create a config folder for any container you plan on using regularly
 * **/app-one** contains a sample aoplication making use of our datasource: it showcases how simple a CF-in-Docker application can be. It creates a test database, adds a table, inserts a record, and then dumps that record.
-* **app-two** contains just one file -- **box.json**. It takes advantage of Commandbox's ability to deploy an entire application. 
+* **/app-two** contains just one file -- **box.json**. It takes advantage of Commandbox's ability to deploy an entire application. 
 * **/nginx** contains the virtual host definition files we need to proxy requests from our local machine to the CF container. It will become the **/etc/nginx** directory inside the NGINX container.
 
 {% hint style='info' %}
