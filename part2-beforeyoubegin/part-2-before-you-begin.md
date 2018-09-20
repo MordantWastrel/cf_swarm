@@ -22,9 +22,14 @@ When possible, we include references to Windows resources \(including a cloud in
 
 The glue that holds all the pieces together in any CF deployment is Commandbox with the [CFConfig](https://www.forgebox.io/view/commandbox-cfconfig) module. As of March 2018, CFConfig supports the following CF engines:
 
-* Adobe Coldfusion 11\* 
+* Adobe Coldfusion 9\*
+* Adobe Coldfusion 10\*
+* Adobe Coldfusion 11\*
+* Adobe Coldfusion 2016\*
+* Adobe Coldfusion 2018\*
 * Lucee 4.5
 * Lucee 5
+* Railo 4.x
 
 While it's possible to deploy Adobe Coldfusion 9 or 10 with Commandbox and find workarounds for using CFConfig, doing so is a tremendous amount of extra work and beyond the scope of this guide. If you need to deploy one of these engines, you may be better served [contacting Ortus](https://www.ortussolutions.com/#contact) and sponsoring official ACF9 or ACF10 support in CFConfig rather than trying to navigate hacking XML files into your Docker image.
 
