@@ -37,5 +37,5 @@ The glue that holds all the pieces together in any CF deployment is Commandbox w
 >
 > This doesn't mean you can't run Adobe Coldfusion in Docker. It does mean that you can't use Commandbox to deploy it unless you have an Enterprise license. This guide is all about Commandbox deployments (for now) but Adobe provides [official docker images](https://bintray.com/eaps/coldfusion) for CF 2016 and 2018; the process for building the images is just different (and a bit less convenient) because you'll have to edit XML files or else build Commandbox and CFConfig into your image process but not actually run your server with them.
 >
-> For these reasons, the primary recommended engine for this guide is Lucee 5. This is primarily a production consideration. It's quite easy to get ACF 11 or later  working for development or staging environments where licensing isn't an issue.
+> For these reasons, the primary recommended engine for this guide is Lucee 5. This is primarily a production consideration. It's quite easy to get Adobe Coldfusion working for development or staging environments where licensing isn't an issue.
 
