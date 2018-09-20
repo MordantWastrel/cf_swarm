@@ -64,4 +64,10 @@ Now navigate to http://cfswarm-two.localtest.me and let's test our second applic
 
 Look again in your **app-two** folder and you'll see an entire application that wasn't there before. When Commandbox started the server, it read **box.json**, downloaded all the dependencies, and deployed them without our having to do anything.
 
+{% hint style='info' %}
+### What happened in each of the containers?
+
+If you want to see the startup process for your containers, use `docker logs [container name]` -- in this case, `docker logs cfswarm-mysql`, `docker logs cfswarm-cfml`, and `docker logs cfswarm-two-cfml` -- the last one will show you how Commandbox deploys the application from `box.json`!
+{% endhint %}
+
 In the next section, we'll go step-by-step through the file that coordinates all of our services with Docker: **docker-compose.yml**.
