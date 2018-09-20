@@ -23,7 +23,7 @@ Before we start it up, let's take a look at what we have:
 
 {% hint style='info' %}
 #### Why NGINX?
-It's not necessary to use any front-end server for local development; your favorite CF engine can serve everything you need for local development. So why bother with the extra work?
+It's not necessary to use any front-end server for local development; your favorite CF engine can serve everything you need. So why bother with the extra work?
 
 * **It's easy**. As you'll see in a moment, NGINX is very small, very fast, and very easy to configure.
 * **It makes developing multiple containers easy**. If you work on more than one app (as we will in this sample), you have to keep track of port numbers for each of your CFML containers. NGINX means we don't have to worry about this.
