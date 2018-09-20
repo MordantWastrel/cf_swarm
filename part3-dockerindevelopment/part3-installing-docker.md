@@ -32,7 +32,7 @@ Docker for Windows employs Hypervisor virtualization to run the MobyLinux VM. If
 {% hint style="info" %}
 **A Note on Docker for Windows and Windows Containers**
 
-Docker for Windows gives you a choice of using Linux Containers or Windows Containers. Select **Linux Containers**. If your pipeline was entirely windows-based, you would use Windows containers, but as of August 2018 this is possible but not yet advisable. The Commandbox image upon which this guide relies is Linux-based, and the authors have not tried containerizing IIS. This process is likely to become easier over the next year or so as Windows 2019 promises to focus on containers, but this guide doesn't ye\) cover a full-scale Windows production deployment. The authors use windows for development, but we'll want to use the same flavor of container everywhere in our pipeline, and that's Linux containers.
+Docker for Windows gives you a choice of using Linux Containers or Windows Containers. Select **Linux Containers**. If your pipeline was entirely windows-based, you would use Windows containers, but as of August 2018 this is possible but not yet advisable. The Commandbox image upon which this guide relies is Linux-based, and the authors have not tried containerizing IIS. This process is likely to become easier over the next year or so as Windows 2019 promises to focus on containers, but this guide doesn't yet cover a full-scale Windows deployment. It's fine if you use windows for development (at least one of the authors does!), but we'll want to use the same flavor of container everywhere in our pipeline, and that's Linux containers.
 
 **Windows Server 2016 & 2019**
 
