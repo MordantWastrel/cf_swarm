@@ -8,6 +8,7 @@
   * [Installing Docker: Initial Setup](part3-dockerindevelopment/part3-installing-docker.md)
   * [Running Docker: Clone a Working Development Stack](part3-dockerindevelopment/part3-running-docker.md)e
   * [docker-compose.yml: A Closer Look](part3-dockerindevelopment/part3-docker-compose.md)
+  * [nginx.conf: Reverse Proxy to a CF Engine](part3-dockerindevelopment/part3-nginx-conf.md)
   * [Managing Docker: Build and Deploy Repositories](part3-dockerindevelopment/part3-build-vs-deploy.md)
 * [Part 4: Choosing a Cloud Infrastructure Provider](part4-choosinginfrastructure/part-4-choosing-a-cloud-infrastructure-provider.md)
 * [Part 5: Instance Setup \(How Many and What Kind\)](part-5-instance-setup/README.md)
