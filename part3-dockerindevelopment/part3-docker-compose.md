@@ -219,6 +219,10 @@ Our CFConfig JSON file doesn't have anything sensitive in it -- it defines a dat
 ```
 **depends_on** tells `docker compose` that this service requires other services to be running before it can start. Since our CF engine isn't much use to us without NGINX and MySQL, `docker compose` will start these services prior to starting `cfswarm-cfml`. Note that Docker doesn't check to see if the services are actually ready -- health checks are more involved and beyond the scope of our development stack. Even so, we want Docker to bring up MySQL and NGINX before starting the CF container.
 
+## NGINX Container
+
+The NGINX container will proxy HTTP and HTTPS requests made to the host on ports 80 and 443 to one or more CF containers. There's only one new directive in this service:
+
 ```
     cfswarm-nginx:
     image: nginx
@@ -240,4 +244,14 @@ Our CFConfig JSON file doesn't have anything sensitive in it -- it defines a dat
     networks:
       - cfswarm-simple
 ```
+### command (2nd level)
 
+Every Docker image executes a command when the container is started. This command is specified in the `Dockerfile` that governs how the image is built. Our CF containers are running a script that triggers Commandbox's `server start`. NGINX's [Dockerfile](https://github.com/nginxinc/docker-nginx/blob/866b071f099f96898563f9a003c2dbb03bb90339/mainline/stretch/Dockerfile) starts the container with the `nginx` command, but for development we'll run NGINX in DEBUG mode. 
+
+We can override the `CMD` directive from the Dockerfile with the `command` directive in `docker-compose.yml`:
+
+```
+command: [nginx-debug, '-g', 'daemon off;']
+```
+
+This replaces the default startup command with `nginx-debug -g daemon off`. 
