@@ -24,17 +24,17 @@ Some providers offer additional features that can make our job easier. Several o
 
 The point of this guide is not to anoint one or more providers as the best for CF cloud deployment. There are so many providers in the market at similar price points that the "best practice" will come down to your needs and preferences. For our purposes, we've selected two providers based on our own research and recommendations from established users. While this guide will use their terminology and screenshot their utilities, almost all of the preparation and configuration will be similar \(control panels, networking, and provisioning\) or identical \(Docker configuration\).
 
-### Linux Hosting: DigitalOcean
+### First Prize: DigitalOcean
 
 ![](/.gitbook/assets/digitalocean_1_390x195.png)
 
-DigitalOcean offers cloud compute instances \(called "droplets"\) with every one of the quality of life perks from our list. All of the examples for the Linux sections of this guide \(which is currently all the sections\) will use DigitalOcean.
+DigitalOcean offers cloud compute instances \(called "droplets"\) with every one of the quality of life perks from our list. While DigitalOcean is geared toward Linux deployments, as of October 2018 they now support custom installation images, so you can set up a Windows "droplet" with your own licensing.
 
 ### Windows Hosting: Vultr
 
 ![](/.gitbook/assets/vultr-vps-review_00-300x190.jpg)
 
-Vultr's offers compute instances with similar configurations and pricing to DigitalOcean, but they also offer Windows Server OS \(2012 and 2016\) . The only drawback to Vultr is that, as of March 2018, their block storage instances are regularly sold out. As an alternative, you can provision a separate cloud computing \(VC2\) instance just for storage, or else get on their notification list for storage instances -- you may only be waiting a couple of days.
+Vultr's offers compute instances with similar configurations and pricing to DigitalOcean, but they also offer licensed instances for Windows Server OS \(2012 and 2016\) . The only drawback to Vultr is that, as of early 2018, their block storage instances are regularly sold out. As an alternative, you can provision a separate cloud computing \(VC2\) instance just for storage, or else get on their notification list for storage instances -- you may only be waiting a couple of days.
 
 Vultr also offers several distributions of Linux, along with the ability to upload your own ISO, so it is by no means just for Windows users.
 
