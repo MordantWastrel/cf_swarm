@@ -4,6 +4,12 @@
 
 If you're already familiar with provisioning and configuring an instance \(droplet\) and just want to get to Docker, you can skip this section.
 
+{% hint style='info' %}
+## Automated Provisioning
+This guide will manually provision a "template" instance and then replicate it, but this process can be automated using tools like [Terraform](https://www.terraform.io). 
+
+{% endhint %}
+
 ## Create a Droplet
 
 When you log in to your DigitalOcean account, you'll be greeted with an empty Droplet Management utility.
