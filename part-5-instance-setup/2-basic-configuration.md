@@ -19,9 +19,9 @@ There aren't any short-cuts here; you don't need to be a Linux guru, but you nee
 {% endhint %}
 ## Initial Setup Tasks
 
-Follow the link in your welcome email to the initial setup guide, but as of March 2018 it is here:
+Follow the link in your welcome email to the initial setup guide, but as of October 2018 it is here:
 
-* [DigitalOcean Ubuntu 16.04 Initial Server Setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04)
+* [DigitalOcean Ubuntu 18.04 Initial Server Setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04)
 
 It's a short guide; don't skip any steps.
 {% hint style='info' %}
