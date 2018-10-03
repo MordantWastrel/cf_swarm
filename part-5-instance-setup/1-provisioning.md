@@ -6,7 +6,7 @@ If you're already familiar with provisioning and configuring an instance \(dropl
 
 {% hint style='info' %}
 ## Automated Provisioning
-This guide will manually provision a "template" instance and then replicate it, but this process can be automated using tools like [Terraform](https://www.terraform.io). 
+This guide will manually provision a "template" instance and then replicate it, but this process can be automated using tools like [Terraform](https://www.terraform.io). That's beyond the scope of this guide ... for now!
 
 {% endhint %}
 
