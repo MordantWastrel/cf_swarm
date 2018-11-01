@@ -6,7 +6,7 @@
 
 If you're reading this guide, you may already have some idea of the principles behind cloud hosting and containerized deployment. If these things still sound like buzzwords rather than concrete concepts, then it's a good idea to start with a brief introduction, like [A Beginner-Friendly Introduction to Containers, VMs and Docker](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b) by Preethi Kasireddy.
 
-For the purposes of this guide, "Containers" means Docker Images, but Docker is not the only container solution in use. Google's Kubernetes is growing in popularity, but it's not quite an apples-to-apples comparison \(for example, you can run Docker in Kubernetes\). Future versions of this guide may cover Docker-alternatives, but as of this writing, Docker has broad community support and best fits our "...in a day" mission.
+For the purposes of this guide, "Containers" means Docker Images, but Docker is not the only container solution in use. Google's Kubernetes is growing in popularity, but it's not quite an apples-to-apples comparison \(for example, you can run Docker in Kubernetes\). Future versions of this guide may cover Docker-alternatives, but as of this writing, Docker has broad community support and best fits our "...in a week" mission.
 
 While the bulk of the guide is dedicated to deploying a Coldfusion pipeline, the governing principles are the same regardless of the language -- that's the whole point!
 
