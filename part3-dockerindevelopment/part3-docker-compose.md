@@ -48,13 +48,22 @@ Some of the terminology around Docker volumes can be confusing. "Volumes" can re
 
 {% endhint %}
 Every service that makes use of a volume will have a service-level `volumes` directive that specifies the source and target mount point for each volume it requires. 
+### networks (top level)
 ```
 networks:
   cfswarm-simple:
+```
+Docker's default behavior without any `networks` directive is to create a "project" network that applies to any service created in the same directory. This would work just fine, but it's best to name your networks so that you can assign each container to one or more of them explicitly. Docker networking is fairly complicated under the hood, but for our purposes, we just need to know which containers need to be able to access which other containers (and so should share a network). Our simple solution here places all of our containers on one network so that each container can access any other container by its name; we'll take advantage of this when configuring our nginx proxy and our CF datasources. 
+
+The top-level `networks` directive just names the network we'll be referring to later on.
+
+### secrets (top level) ###
+```
 secrets:
   cfconfig:
     file: ./config/cfml/cfconfig/cfconfig.json
 ```
+Like the `networks` directive, the top-level `secrets` directive defines a "Docker Secret" that we'll refer to in each of our services. We'll cover this in more detail below; for now, it's sufficient to know that we want to define individual pieces of data or files that we will mount into one or more containers, and that they're called secrets because this is a mechanism that is used to great effect for storing credentials and any other sensitive information we don't want accessible to anything outside our container. 
 
 ### services (top-level) -- Docker Services vs. Docker Containers
 ```
@@ -159,7 +168,7 @@ As always, consult the [docker compose](https://docs.docker.com/compose/compose-
     networks:
         - cfswarm-simple
 ```
-Without the **networks** directive, `docker compose` will create a single network that is shared by all the services in your `compose` file that can be discovered and accessed by all the containers that belong to those services. That's exactly what we want, so all we're doing with this directive is specifying a name for that network. 
+The service-level `networks` directive refers back to the top-level `network` name we defined earlier. Every container that needs to access that network should have a service-level directive referring to it.
 
 ## CF Engine Service
 Our CFML service definition uses some of the same directives as the `mysql` service, but but with a few alternatives and additions.
@@ -204,6 +213,8 @@ In our MySQL service, we specified each environment variable on its own line. Si
       - source: cfconfig # this isn't really a secret but non-stack deploys don't support configs so let's make it one
         target: cfconfig.json
 ```
+The service-level `secrets` directive refers back to the secret we defined at the top level. But what is a secret, and why are we using it?
+
 Docker has two mechanisms to mount individual files into a container at runtime: **[configs](https://docs.docker.com/engine/swarm/configs/)** and **[secrets](https://docs.docker.com/engine/swarm/secrets/)**. They're very similar, but with two key distinctions:
 
 * `docker configs` are not (yet) supported by `docker compose` -- they're meant for `docker stack` deployments, which we'll use in production.
