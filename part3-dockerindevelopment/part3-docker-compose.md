@@ -117,7 +117,7 @@ Only the name of the image is required. For ubiquitous software like mysql or ng
 
 Without this directive, Docker will assign a randomly generated name to the container for our MySQL service. While it's easy to see the names of running containers with `docker container ls`, we want to be able to refer to our containers quickly and easily, whether we're outputting logs (`docker logs cfswarm-mysql`) or logging in to the container (`docker exec -it cfswarm-mysql bash`). 
 
-Note that you can only use the `container_name` directive when you have a single container in your service. If we were replicating our service -- running multiple containers in parallel -- `container_name` would be forbidden.
+Note that you can only use the `container_name` directive when you have a single container in your service. If we were replicating our service -- running multiple, identical containers in parallel -- `container_name` would be forbidden.
 
 ### environment (2nd level; variables on 3rd level)
 ```
