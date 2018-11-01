@@ -46,7 +46,7 @@ The default resource consumption parameters for Docker containers are that they 
 
 The default installation of Docker for Windows and Docker for Mac imposes significant limits on the MobyLinux VM. Since we will be running our CF engine, a database, a front-end web server, and \(optionally\) a cache server, we'll want to allocate additional RAM and CPU. 4 gigabytes of RAM and 1 CPU is probably sufficient, but it depends on how resource-hungry the applications you're developing are. If you have CPU cores or memory to spare, allocate as much as you'd like for your development environment. If you're running MSSQL Linux rather than MySQL, we recommend 6 GB rather than 4; our development machines at inLeague have at least 16 gigs of RAM and we'll allocate at least 8 to Docker.
 
-Of course, if you're running "Docker native" (on Linux or Windows Server 2016+) you can skip this step as Docker doesn't require an up-front allocation of resources. 
+Of course, if you're running "Docker native" (on Linux, Windows 10 with LCOW mode, or Windows Server 2016+) you can skip this step as Docker doesn't require an up-front allocation of resources. 
 
 ![Figure 3.3: Sam&apos;s Docker for Windows Resource Settings](/.gitbook/assets/snip_20180501102036.png)
 
