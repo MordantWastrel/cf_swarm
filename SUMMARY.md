@@ -1,16 +1,16 @@
-# Summary
+# Table of contents
 
 * [Preface: Who Is This Guide For?](README.md)
 * [About the Author & License](about-the-author-and-license.md)
-* [Part 1: What Containers Mean To Web Applications \(and You\)](part1-whatdocontainersmean/part-1-what-containers-mean-to-web-applications-and-you.md)
-* [Part 2: Before You Begin](part2-beforeyoubegin/part-2-before-you-begin.md)
-* [Part 3: Docker in Development](part3-dockerindevelopment/part-3-docker-in-development.md)
-  * [Installing Docker: Initial Setup](part3-dockerindevelopment/part3-installing-docker.md)
-  * [Running Docker: Clone a Working Development Stack](part3-dockerindevelopment/part3-running-docker.md)e
-  * [docker-compose.yml: A Closer Look](part3-dockerindevelopment/part3-docker-compose.md)
-  * [nginx.conf: Reverse Proxy to a CF Engine](part3-dockerindevelopment/part3-nginx-conf.md)
-  * [Managing Docker: Build and Deploy Repositories](part3-dockerindevelopment/part3-build-vs-deploy.md)
-* [Part 4: Choosing a Cloud Infrastructure Provider](part4-choosinginfrastructure/part-4-choosing-a-cloud-infrastructure-provider.md)
+* [Part 1: What Containers Mean To Web Applications \(and You\)](part-1-what-containers-mean-to-web-applications-and-you.md)
+* [Part 2: Before You Begin](part-2-before-you-begin.md)
+* [Part 3: Docker in Development](part-3-docker-in-development/README.md)
+  * [Installing Docker: Initial Setup](part-3-docker-in-development/part3-installing-docker.md)
+  * [Running Docker: Clone a Working Development Stack](part-3-docker-in-development/part3-running-docker.md)
+  * [docker-compose.yml: A Closer Look](part-3-docker-in-development/part3-docker-compose.md)
+  * [nginx.conf: Reverse Proxy to a CF Engine](part-3-docker-in-development/part3-nginx-conf.md)
+  * [Managing Docker: Build and Deploy Repositories](part-3-docker-in-development/part3-build-vs-deploy.md)
+* [Part 4: Choosing a Cloud Infrastructure Provider](part-4-choosing-a-cloud-infrastructure-provider.md)
 * [Part 5: Instance Setup \(How Many and What Kind\)](part-5-instance-setup/README.md)
   * [Your First Instance: Provisioning](part-5-instance-setup/1-provisioning.md)
   * [Your First Instance: Basic Configuration & Security](part-5-instance-setup/2-basic-configuration.md)
@@ -22,6 +22,6 @@
   * [Database Setup: MySQL](part-6-database-setup/database-setup-mysql.md)
   * [Database Setup: Microsoft SQL Server](part-6-database-setup/database-setup-microsoft-sql-server.md)
   * [Database Setup: Provider Firewall](part-6-database-setup/database-setup-provider-firewall.md)
-* [Part 7: Container Strategy](part7-ContainerStrategy/part-7-container-strategy.md)
+* [Part 7: Container Strategy](part-7-container-strategy.md)
 * [Credits & Acknowledgments](credits-and-acknowledgments.md)
 

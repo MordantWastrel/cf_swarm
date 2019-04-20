@@ -1,4 +1,4 @@
-# Part 3: Choosing a Cloud Infrastructure Provider
+# Part 4: Choosing a Cloud Infrastructure Provider
 
 There are numerous "Infrastructure-as-a-Service" \(IaaS\) providers and many of them are sufficient for our needs. The requirements for this guide are rudimentary, so your selection may come down to personal preference or geography.
 
@@ -26,13 +26,13 @@ The point of this guide is not to anoint one or more providers as the best for C
 
 ### First Prize: DigitalOcean
 
-![](/.gitbook/assets/digitalocean_1_390x195.png)
+![](.gitbook/assets/digitalocean_1_390x195.png)
 
 DigitalOcean offers cloud compute instances \(called "droplets"\) with every one of the quality of life perks from our list. While DigitalOcean is geared toward Linux deployments, as of October 2018 they now support custom installation images, so you can set up a Windows "droplet" with your own licensing.
 
 ### Windows Hosting: Vultr
 
-![](/.gitbook/assets/vultr-vps-review_00-300x190.jpg)
+![](.gitbook/assets/vultr-vps-review_00-300x190.jpg)
 
 Vultr's offers compute instances with similar configurations and pricing to DigitalOcean, but they also offer licensed instances for Windows Server OS \(2012 and 2016\) . The only drawback to Vultr is that, as of early 2018, their block storage instances are regularly sold out. As an alternative, you can provision a separate cloud computing \(VC2\) instance just for storage, or else get on their notification list for storage instances -- you may only be waiting a couple of days.
 
@@ -42,7 +42,7 @@ Vultr also offers several distributions of Linux, along with the ability to uplo
 
 There are numerous other providers and if you already have one you like, you should stick with them provided that they meet the requirements and offer most of the perks from our list. [Linode](https://www.linode.com/) is a popular alternative, and there are [articles](https://www.mamboserver.com/digitalocean-alternatives/) published once or twice a year with a round-up of the market.
 
-If you already have experience or an investment in AWS or Goolge Cloud, you have everything you need to proceed and there is likely no reason to start with a new provider. AWS is not used in this guide is because the Amazon ecosystem does so much more than we need for even a well-developed application development CF pipeline that the added learning curve puts it just out of reach for this guide. We found Google Cloud to have slightly less of a learning curve, but its pricing was not competitive with DigitalOcean or Vultr as of March 2018.
+If you already have experience or an investment in AWS or Goolge Cloud, you have everything you need to proceed and there is likely no reason to start with a new provider. AWS is not used in this guide is because the Amazon ecosystem does so much more than we need for even a well-developed application development CF pipeline that the added learning curve puts it just out of reach for this guide. We found Google Cloud to have slightly less of a learning curve, but its pricing was not competitive with DigitalOcean or Vultr as of March 2018 unless you commit in advance to monthly service.
 
 An exception is [Amazon Lightsail](https://aws.amazon.com/lightsail/), which is a simplified offering based on specific AWS compute instances and some provider-level tools \(and pricing\) comparable to DigitalOcean and Vultr. If you know you're going to end up in the AWS ecosystem, consider starting with Lightsail rather than DigitalOcean or Vultr; like Vultr, Lightsail offers Windows instances. Amazon also offers block storage through their [Elastic Block Storage](https://aws.amazon.com/ebs/pricing/) service at a price point comparable to DigitalOcean. Google Cloud also has both Windows instances and block storage.
 
