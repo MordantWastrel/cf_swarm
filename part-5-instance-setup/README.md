@@ -41,7 +41,7 @@ This guide will take the **Hybrid** approach. [As the pets/cattle slide says](..
 
 ### The Goal Line: Our Sample Network Diagram
 
-![](../.gitbook/assets/cf-swarm-generic.png)
+![](../assets/CF Swarm Generic.png)
 
 > #### Aside: Instances or Droplets?
 >
