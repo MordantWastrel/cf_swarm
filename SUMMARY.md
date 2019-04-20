@@ -11,7 +11,7 @@
   * [nginx.conf: Reverse Proxy to a CF Engine](part-3-docker-in-development/part3-nginx-conf.md)
   * [Managing Docker: Build and Deploy Repositories](part-3-docker-in-development/part3-build-vs-deploy.md)
 * [Part 4: Choosing a Cloud Infrastructure Provider](part-4-choosing-a-cloud-infrastructure-provider.md)
-* [Part 5: Instance Setup \(How Many and What Kind\)](part-5-instance-setup/README.md)
+* [Part 5: The Production Network Layout \(How Many Instances and What Kind\)](part-5-instance-setup/README.md)
   * [Your First Instance: Provisioning](part-5-instance-setup/1-provisioning.md)
   * [Your First Instance: Basic Configuration & Security](part-5-instance-setup/2-basic-configuration.md)
   * [Your First Instance: \(Optional\) Provider-Level Firewall](part-5-instance-setup/3-firewall.md)
@@ -24,4 +24,6 @@
   * [Database Setup: Provider Firewall](part-6-database-setup/database-setup-provider-firewall.md)
 * [Part 7: Container Strategy](part-7-container-strategy.md)
 * [Credits & Acknowledgments](credits-and-acknowledgments.md)
+
+
 
