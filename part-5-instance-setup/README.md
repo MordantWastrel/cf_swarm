@@ -28,6 +28,14 @@ This guide will take the **Hybrid** approach. [As the pets/cattle slide says](..
 
 {% endhint %}
 
+### The Goal Line: Our Sample Network Diagram
+
+![](../assets/CF Swarm Generic.png)
+
+> #### Aside: Instances or Droplets?
+>
+> The examples in this guide happen to use DigitalOcean, which refers to their virtual machine hosts as "Droplets." When we use this term in an example or a screenshot, we're referring to what most other providers call "cloud compute instances." We'll typically say "an instance," but it's interchangable with "a Droplet" \(or "a Linode" if Linode is your provider\)
+
 ## 5-6 Compute and Two Block Storage Instances: An Entry- to Mid-Level Network Layout
 
 We have to give each of our component services a home, and we know that we can containerize any of them. In determining default instance size, remember that it's very simple to move up and a nuisance to move down. The default selections we've made are above the minimum requirements for each service, so in each case, you can squeak by if saving $5-$10/mo. is meaningful savings.
@@ -53,15 +61,14 @@ Two optional but very useful services to add to your stack should live outside t
 * **\(Optional\) NFS Server**:  For low- to medium traffic sites, we can proxy every request from NGINX to our CF container\(s\) in the swarm; but we don't need CF containers to serve static assets, so it'd be nice for NGINX to handle this. Alternatively, we may want to share static assets between multiple containers, and then we run into the Swarm Persistent Storage Problem. We want our application servers to be able to share the block storage volume attached to our front end web servers. Setting up NFS to expose this volume to one or more application servers doesn't require significant time or resources; we'll put this on Instance 2 since that's where the storage volume is. This is a low-rent solution to the problem of shared swarm storage; be sure to read the section on Swarm Persistent Storage!
 
 * **\(Optional\) VPN Server**. Unless you have dozens or hundreds of clients connecting to your VPN, your VPN server will consume a negligible amount of resources.  We'll put a VPN server on Instance 3 with our swarm manager.
-* **\(Optional\) Repository / Registry / CI & CD** . 
+* **\(Optional\) Repository / Registry / CI & CD** . It's a great time to be in the market for source control, docker container registries, and CI/CD engines. At inLeague, we don't have a dedicated DevOps team, so we needed a solution that was easy to manage and that would integrate well with the rest of our stack with as little specialized integration work as possible. We really like Gitlab, but everything in this guide applies just the same to any on-premises solution (like Bitbucket) and very nearly the same if you use an external, cloud-hosted solution like Github, Bitbucket Cloud, or Gitlab.com. Why do we prefer Gitlab?
 
-### The Goal Line: Our Sample Network Diagram
-
-![](../assets/CF Swarm Generic.png)
-
-> #### Aside: Instances or Droplets?
->
-> The examples in this guide happen to use DigitalOcean, which refers to their virtual machine hosts as "Droplets." When we use this term in an example or a screenshot, we're referring to what most other providers call "cloud compute instances." We'll typically say "an instance," but it's interchangable with "a Droplet" \(or "a Linode" if Linode is your provider\)
+* Combines source control, container registry, CI/CD, and issue tracking
+* The Omnibus Install makes it trivial to set up
+* Can use any S3 compatible solution (like [DigitalOcean Spaces]
+(https://www.digitalocean.com/products/spaces/)) to store both backups and Docker images 
+* Lots of goodies available with paid subscription levels
+* With a little extra work, we can re-use an existing part of our stack that Gitlab depends upon (e.g. NGINX, Postgres, Redis) rather than duplicating those services just for Gitlab
 
 ### In This Section, We Will...
 
