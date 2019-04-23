@@ -10,4 +10,6 @@ Since we're laying out infrastructure for an entire development pipeline, though
 
 ## Docker Imaegs and the Container Registry
 
-When we ran `docker-compose up` in the previous section, we created a **container** based on a publicly-available Ortus Commandbox Image. A Docker **image** is a blueprint for a container that is itself made from one or more, previous Docker images. The Ortus Commanndbox image, for example, is based on the [official AdoptOpenJDK Java 8 'slim' image](https://hub.docker.com/r/adoptopenjdk/openjdk8), which is itself based on the official Ubuntu 18 image, as you can see in the [AdoptOpenJDK Dockerfile](https://github.com/AdoptOpenJDK/openjdk-docker/blob/master/8/jdk/ubuntu/Dockerfile.hotspot.releases.slim).
+When we ran `docker-compose up` in the previous section, we created a **container** based on a publicly-available Ortus Commandbox Image. A Docker **image** is a blueprint for a container that is itself made from one or more, previous Docker images. The Ortus Commanndbox image, for example, is based on the [official AdoptOpenJDK Java 8 'slim' image](https://hub.docker.com/r/adoptopenjdk/openjdk8), which is itself based on the [official Ubuntu 18 image](https://hub.docker.com/_/ubuntu), as you can see in the [AdoptOpenJDK Dockerfile](https://github.com/AdoptOpenJDK/openjdk-docker/blob/master/8/jdk/ubuntu/Dockerfile.hotspot.releases.slim).
+
+When 
