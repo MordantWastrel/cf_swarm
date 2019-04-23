@@ -8,3 +8,5 @@ The lion's share of the work in creating the Docker images used in the CF world 
 
 Since we're laying out infrastructure for an entire development pipeline, though, we'll want to make our own images, even if the changes we make might just be one or two lines to copy a configuration file. So before we get to our development environment, let's put in some plumbing that will let us easily build the Docker images we'll deploy in dev later.
 
+## Docker Imaegs and the Container Registry
+

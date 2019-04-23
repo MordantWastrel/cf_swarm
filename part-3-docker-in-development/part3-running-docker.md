@@ -37,7 +37,7 @@ While NGINX is very easy to learn, any front-end web server capable of a reverse
 
 #### \(Adobe Only\) What about Connectors?
 
-If there's a reason to bother with Adobe's connectors in a Docker deployment \(even their now two-year-old [NGINX Connector 'Prerelease'](https://coldfusion.adobe.com/2016/10/prerelease-build-of-nginx-connector-for-coldfusion-2016-now-available/)\), I'm not aware of it. A reverse proxy does the same job with fewer moving parts.
+If there's a reason to bother with Adobe's connectors in a Docker deployment \(even their now two-year-old [NGINX Connector 'Prerelease'](https://coldfusion.adobe.com/2016/10/prerelease-build-of-nginx-connector-for-coldfusion-2016-now-available/)\), we're not aware of it. A reverse proxy does the same job with fewer moving parts.
 {% endhint %}
 
 In your favorite terminal, `cd` into that directory and enter:
