@@ -12,4 +12,10 @@ Since we're laying out infrastructure for an entire development pipeline, though
 
 When we ran `docker-compose up` in the previous section, we created a **container** based on a publicly-available Ortus Commandbox Image. A Docker **image** is a blueprint for a container that is itself made from one or more, previous Docker images. The Ortus Commanndbox image, for example, is based on the [official AdoptOpenJDK Java 8 'slim' image](https://hub.docker.com/r/adoptopenjdk/openjdk8), which is itself based on the [official Ubuntu 18 image](https://hub.docker.com/_/ubuntu), as you can see in the [AdoptOpenJDK Dockerfile](https://github.com/AdoptOpenJDK/openjdk-docker/blob/master/8/jdk/ubuntu/Dockerfile.hotspot.releases.slim).
 
-When 
+When you run the Ortus image, whether from `docker run` or `docker-compose up`, it pulls each of the dependent image layers from the [Docker Hub](https://www.docker.com/products/docker-hub), a publicly accessible Container Registry. Each layer of the image is downloaded to your local Docker daemon and then cached.
+
+You may notice
+
+{% hint style="tip" %}
+If you regularly build your own Docker images, make sure you regularly `docker pull` the nearest dependent image -- in this case, `ortussolutions/commandbox`. 
+{% endhint %}
