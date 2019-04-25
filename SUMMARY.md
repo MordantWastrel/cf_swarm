@@ -5,7 +5,7 @@
 * [Part 1: What Containers Mean To Web Applications \(and You\)](part-1-what-containers-mean-to-web-applications-and-you.md)
 * [Part 2: Before You Begin](part-2-before-you-begin.md)
 * [Part 3: Docker in Development](part3-docker-in-development/README.md)
-  * [Installing Docker: Initial Setup](part-3-docker-in-development/part3-installing-docker.md)
+  * [Installing Docker: Initial Setup](part3-docker-in-development/part3-installing-docker.md)
   * [Running Docker: Clone a Working Development Stack](part3-docker-in-development/part3-running-docker.md)
   * [docker-compose.yml: A Closer Look](part3-docker-in-development/part3-docker-compose.md)
   * [nginx.conf: Reverse Proxy to a CF Engine](part3-docker-in-development/part3-nginx-conf.md)
