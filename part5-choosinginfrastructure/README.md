@@ -1,8 +1,4 @@
-```
 # Part 4: Choosing a Cloud Infrastructure Provider
-```
-
-```
 
 There are numerous "Infrastructure-as-a-Service" \(IaaS\) providers and many of them are sufficient for our needs. The requirements for this guide are rudimentary, so your selection may come down to personal preference or geography.
 
@@ -49,9 +45,3 @@ There are numerous other providers and if you already have one you like, you sho
 If you already have experience or an investment in AWS or Goolge Cloud, you have everything you need to proceed and there is likely no reason to start with a new provider. AWS is not used in this guide is because the Amazon ecosystem does so much more than we need for even a well-developed application development CF pipeline that the added learning curve puts it just out of reach for this guide. We found Google Cloud to have slightly less of a learning curve, but its pricing was not competitive with DigitalOcean or Vultr as of March 2018 unless you commit in advance to monthly service.
 
 An exception is [Amazon Lightsail](https://aws.amazon.com/lightsail/), which is a simplified offering based on specific AWS compute instances and some provider-level tools \(and pricing\) comparable to DigitalOcean and Vultr. If you know you're going to end up in the AWS ecosystem, consider starting with Lightsail rather than DigitalOcean or Vultr; like Vultr, Lightsail offers Windows instances. Amazon also offers block storage through their [Elastic Block Storage](https://aws.amazon.com/ebs/pricing/) service at a price point comparable to DigitalOcean. Google Cloud also has both Windows instances and block storage.
-
-```
-
-  
-
-
