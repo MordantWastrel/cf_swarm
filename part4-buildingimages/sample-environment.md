@@ -20,7 +20,7 @@ Running the [docker build](https://docs.docker.com/engine/reference/commandline/
 It's always a good idea to put the directives that will change most often later in your Dockerfile, and the directives that will not change very often above them; this will keep your Docker builds from re-building layers that haven't changed.
 {% endhint %}
 
-Let's have a line-by-line look at `Dockerfile` and an alternate "tag" build, `Dockerfile.Alpine`. As with `docker-compose.yml`, lines begining with `#` are comments and are disregarded by Docker.
+Let's have a line-by-line look at the [Dockerfile](https://github.com/inLeagueLLC/simple-docker-build/blob/master/Dockerfile) and an alternate "tag" build, [Dockerfile.Alpine](https://github.com/inLeagueLLC/simple-docker-build/blob/master/Dockerfile.Alpine). As with `docker-compose.yml`, lines begining with `#` are comments and are disregarded by Docker.
 
 ## FROM ortussolutions/commandbox
 
