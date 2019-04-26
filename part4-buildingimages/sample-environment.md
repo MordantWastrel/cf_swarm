@@ -47,7 +47,7 @@ LABELs are optional metadata descriptors for your Dockerfile that will appear wh
 
 ## ARG DEBIAN_FRONTEND=noninteractive (Build-time OS Settings)
 
-`ARG` is similar to `ENV` that we'll see in a moment: it sets an environment variable inside the container, in this case telling Ubuntu that the console is being run by an automated tool and to ignore some warning output it might otherwise show us. Unlike `ENV`, `ARG` environment variables are only set during the build process. This particular `ARG` is not necessary, but it makes the output of the rest of the build process a little cleaner.
+`ARG` is similar to `ENV` that we'll see in a moment: it sets an environment variable inside the container, in this case telling Ubuntu that the console is being run by an automated tool and to ignore some warning output it might otherwise show us. Unlike `ENV`, `ARG` environment variables are only set during the build process, while `ENV` sets environment variables anytime a container based on this image is created. This particular `ARG` is not necessary, but it makes the output of the rest of the build process a little cleaner.
 
 ## RUN apt-get update && apt-get install -y nano && \ rm -rf /var/lib/apt/lists/* (Installing OS Packages)
 
