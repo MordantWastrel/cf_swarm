@@ -42,15 +42,15 @@ Once you're comfortable building Docker images, you may find that you want sever
 
 You'll often see image tags used to specify individual versions of applications, e.g. `mysql:5.5` versus `mysql:8.0`. If no tag is specified, Docker will use the tag `latest` by default.
 
-## LABEL maintainer "Samuel Knowlton <sam@inleague.org>"
+## LABEL maintainer "Samuel Knowlton <sam@inleague.org>" (Image Metadata)
 
 LABELs are optional metadata descriptors for your Dockerfile that will appear whenever an image based on your image is inspected via `docker inspect`. You can use any label, or you can conform to the [Label Schema Convention](http://label-schema.org/). Or you can ignore Labels entirely.
 
-## ARG DEBIAN_FRONTEND=noninteractive
+## ARG DEBIAN_FRONTEND=noninteractive (Build-time OS Settings)
 
 `ARG` is similar to `ENV` that we'll see in a moment: it sets an environment variable inside the container, in this case telling Ubuntu that the console is being run by an automated tool and to ignore some warning output it might otherwise show us. Unlike `ENV`, `ARG` environment variables are only set during the build process. This particular `ARG` is not necessary, but it makes the output of the rest of the build process a little cleaner.
 
-## RUN apt-get update && apt-get install -y nano && \ rm -rf /var/lib/apt/lists/*
+## RUN apt-get update && apt-get install -y nano && \ rm -rf /var/lib/apt/lists/* (Installing OS Packages)
 
 It's three commands in one! Why?
 
@@ -63,3 +63,93 @@ RUN doSomeCommand &&
     \ doThirdCommand && 
     \ doFourthCommand
 ```
+
+## ENV LUCEE_EXTENSIONS "99A..." (Installing Lucee Extensions)
+Commandbox is "warmed up" when it has retrieved and installed the relevant CF Engine `.WAR` file. If you're running Lucee, much of the available functionlaity has been moved out of the WAR file and into Lucee Extensions. While we could add individual `.lex` files to a /deploy folder in our Docker Build process, that folder only exists after the engine itself has been warmed up; far better to tell Lucee what extensions we want during the warm-up process. As of April 2019, the easiest (if not the friendliest) means of doing so is to specify the unique ID, name, and version number of each extension in the `LUCEE_EXTENSIONS` environment variable as follows:
+
+```ENV LUCEE_EXTENSIONS "UUID;name=My Extension;version=1.2.0,UUIDForExtension2;name=My Second Extension;version=1.1.0"```
+
+The extension list, unique IDs, and available versions are listed at [download.lucee.org](https://download.lucee.org). 
+
+{% hint style="info" %}
+As of [Lucee 5.2.9.38 or 5.3.3.13](https://luceeserver.atlassian.net/browse/LDEV-1196), you can now specify the environment variable `LUCEE_ENABLE_WARMUP true` and the Lucee server will wait until all extensions and deployments are complete before exiting.
+{% endhint %}
+
+## ENV CFENGINE=lucee@5.3.1+102 (Which Engine to Deploy)
+
+Another environment variable -- this time, one documented in the Ortus Commandbox Image README. `CFENGINE` tells Commandbox which CF engine we want to deploy. It can be a Forgebox stub (as the example above is) or a URL or filesystem location resolving to a WAR file. See other examples in the comments in the Dockerfile!
+
+## RUN box install commandbox-fusionreactor (Commandbox modules)
+This directive starts Commandbox (which is already installed by the previous, Ortus image), downloads the [commandbox-fusionreactor](https://www.forgebox.io/view/commandbox-fusionreactor) module from Forgebox, and installs it. 
+
+## RUN ${BUILD_DIR}/util/warmup-server.sh (Warm Up The Server)
+This directive is the whole reason we're here: to tell Commandbox we want the CF engine defined in `CFENGINE` downloaded and installed, and then to start it up and install the extensions we've defined in `LUCEE_EXTENSIONS`. This process will usually take at least a couple of minutes, and when it's done, the resulting image will be quite a bit bigger than the Ortus "base" image but it will start up in seconds rather than minutes.
+
+# Running the Build: Docker Build and docker-compose build
+Take your Docker Hub account name from the previous section and replace `inleague` with it below to get an **image tag** of `mydockerhubusername/cfswarm-commandbox`:
+
+```
+inleague/cfswarm-commandbox
+```
+That will be "our" image, instead of `ortussolutions/commandbox`. To build it, we'll run `docker build` with the `-t` option to specify the image tag we want; without it, the image would be built and assigned an alphanumeric ID, but we could only refer to it by that ID. From the top level of the repository directory:
+
+```
+docker build -t mydockerhubusername/cfswarm-commandbox .
+```
+
+The `.` in the above command tells Docker to use the current directory as the **build content**, so it will look for a `Dockerfile` in that directory.
+
+You'll see the temporary build container start and run through all the commands in our Dockerfile. After a few minutes, you'll get:
+
+![](/assets/snip_20190426160452.png)
+
+The image exists locally on your machine, so now let's push it up to Docker Hub. First we have to give Docker our Docker Hub credentials, and then we can push our image up:
+
+```
+docker login
+(input Docker Hub credentials)
+docker push mydockerhubusername/cfswarm-commandbox
+```
+
+Now our image is publicly available to anyone via `docker pull mydockerhubusername/cfswarm-commandbox` or else `FROM mydockerhubusername/cfswarm-commandbox` in a Dockerfile.
+
+## docker-compose build
+
+Even if we build our own images every couple of months, it's tedious to type out the tags every time -- especially if you're also specifying a private container registry. `docker-compose build` to the rescue! Have a look at `docker-compose.yml` in the repository you cloned:
+
+```
+version: '3.6'
+
+services:
+  cfswarm:
+    image: mydockerhubusername/cfswarm-commandbox
+    build:
+      context: ./
+```
+
+`docker-compose build` in the root repository directory will run exactly the same `docker build` command that we ran before. The image tag is pulled from the `image` directive in our YAML file, and the `.` (context) from the `build/context` directive. 
+
+## Alternate Dockerfiles and docker-compose.yml files
+
+What if we wanted to build an `:alpine` tag of the same image using `Dockerfile.Alpine`? 
+
+We can use `docker build` and specify an alternate Dockerfile:
+
+```
+docker build -f Dockerfile.Alpine -t mydockerhubusername/cfswarm-commandbox:alpine .
+```
+
+Or we can use an alternate `.yml` file with `docker-compose build`:
+
+```
+docker-compose -f commandbox-alpine.yml build
+```
+
+And then push the resulting image up to Docker Hub:
+
+```
+docker push mydockerhubusername/cfswarm-commandbox:alpine
+```
+
+
+Which you use is a matter of preference, but `docker-compose` lets us specify `ARG`s, `LABEL`s, `ENV`s, and all kinds of other options without changing our Dockerfile.
