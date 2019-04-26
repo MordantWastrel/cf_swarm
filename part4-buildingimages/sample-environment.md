@@ -25,8 +25,7 @@ Let's have a line-by-line look at `Dockerfile` and an alternate "tag" build, `Do
 ## FROM ortussolutions/commandbox
 
 This is a common, shorthand reference for the following Docker image:
-`docker.io/ortussolutions/commandbox`
-`ortussolutions` is the account name and `commandbox` is the image name. `docker.io` is Docker Hub, and Docker will always use that address unless you specify a fully-qualified domain name for a different container registry (e.g. `registry.mycompany.com/path/to/image`). 
+`docker.io/ortussolutions/commandbox`. **ortussolutions** is the account name and **commandbox** is the image name. **docker.io** is Docker Hub, and Docker will always use that address unless you specify a fully-qualified domain name for a different container registry (e.g. `registry.mycompany.com/path/to/image`). 
  
 The term "Docker Image" usually refers to an amalgam of several images: for example, the "Ortus Commandbox Docker Image" (singular) is actually several images, each of which has its own Dockerfile. Every Docker image is built on another Docker image, which is why you'll often see Docker images visualized like this:
 
