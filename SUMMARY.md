@@ -10,7 +10,7 @@
   * [docker-compose.yml: A Closer Look](part3-docker-in-development/part3-docker-compose.md)
   * [nginx.conf: Reverse Proxy to a CF Engine](part3-docker-in-development/part3-nginx-conf.md)
 * [Part 4: Building Images and Container Registries](part4-buildingimages/README.md)
-  *  [Our First Image: A Sample Build Environment](part4-buildingimages/sample-environment.md)
+  * [Our First Image: A Sample Build Environment](part4-buildingimages/sample-environment.md)
 * [Part 5: Choosing a Cloud Infrastructure Provider](part-5-choosing-a-cloud-infrastructure-provider.md)
 * [Part 6: The Production Network Layout \(How Many Instances and What Kind\)](part6-ProductionLayout/README.md)
   * [Your First Instance: Provisioning](part6-ProductionLayout/1-provisioning.md)
