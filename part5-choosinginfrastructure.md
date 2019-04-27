@@ -20,13 +20,13 @@ The point of this guide is not to anoint one or more providers as the best for C
 
 ### First Prize: DigitalOcean
 
-![](https://github.com/MordantWastrel/cf_swarm/blob/tree/master/assets/digitalocean_1_390x195.png)
+![](.gitbook/assets/digitalocean_1_390x195.png)
 
-DigitalOcean offers cloud compute instances \(called "droplets"\) with every one of the quality of life perks from our list. While DigitalOcean is geared toward Linux deployments, as of October 2018 they now support custom installation images, so you can set up a Windows "droplet" with your own licensing and a little bit of creativity. 
+DigitalOcean offers cloud compute instances \(called "droplets"\) with every one of the quality of life perks from our list. While DigitalOcean is geared toward Linux deployments, as of October 2018 they now support custom installation images, so you can set up a Windows "droplet" with your own licensing and a little bit of creativity.
 
 ### Windows Hosting: Vultr
 
-![](https://github.com/MordantWastrel/cf_swarm/blob/tree/master/assets/Vultr-VPS-Review_00-300x190.jpg)
+![](.gitbook/assets/vultr-vps-review_00-300x190%20%281%29.jpg)
 
 Vultr's offers compute instances with similar configurations and pricing to DigitalOcean, but they also offer licensed instances for Windows Server OS, dedicated instances, non-virtualized baremetal service, and block storage.
 
