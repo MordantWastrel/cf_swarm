@@ -1,4 +1,4 @@
-# Part 7: Container Strategy
+# Container Strategy
 
 While most of this guide is concerned with the preparation your application servers for containerization, we're going to need some tools to manage those containers and how they work together on our network. Even if we only have one or two containers to start with, part of why we're making this investment is to enjoy the benefits of easy scalability. Also, even if we only end up running a single container for our CF engine, we still want to be able to do "rolling updates" of that container, which leads us to the concept of **orchestration:** a standardization of container environment beyond the specific hardware host and operating system upon which the containers are running.
 

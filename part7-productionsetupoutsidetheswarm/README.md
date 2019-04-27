@@ -1,4 +1,4 @@
-# Part 6: Database Setup
+# Part 7: Production Setup \(Outside the Swarm\)
 
 ## The Database: A Pet with Strong Configuration Management
 

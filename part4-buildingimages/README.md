@@ -1,4 +1,4 @@
-# Managing Docker: Build and Deploy Repositories
+# Part 4: Building Images and Container Registries
 
 {% hint style="info" %}
 Setting up a Build Environment and Building Your Own Commandbox Image \(Time Required: 10 Minutes\)
@@ -19,7 +19,7 @@ You can create your own images and store them on Docker Hub for free, so long as
 {% hint style="warning" %}
 ### Before You Continue: Create a Docker Hub Account
 
-While it's not required, there's no reason not to [create a Docker Hub account](https://hub.docker.com/signup) so that you can push (store) and use the images you create here. If you don't, you will still be able to use the images you create locally, but you won't be able to use them later on in the Swarm section.
+While it's not required, there's no reason not to [create a Docker Hub account](https://hub.docker.com/signup) so that you can push \(store\) and use the images you create here. If you don't, you will still be able to use the images you create locally, but you won't be able to use them later on in the Swarm section.
 {% endhint %}
 
 ## Making Your Own Docker Image
@@ -31,8 +31,8 @@ There are many reasons why making your own Docker images is a good idea:
 * **Adding Commandbox Modules**: Commandbox has several modules that can help support your application but which are not included in the default installation -- [commandbox-migrations](https://forgebox.io/view/commandbox-migrations), [commandbox-hostupdater](https://www.forgebox.io/view/commandbox-hostupdater), or [commandbox-fusionreactor](https://forgebox.io/view/commandbox-fusionreactor) are just a few of these. There's no reason to install them every time your container starts when you can bake them right into your own base image.
 * **Adding packages to your container OS**: It's not unusual for an application to require custom fonts, custom .JARs, or some other package dependency.
 
-{% hint style="tip" %}
-If you regularly build your own Docker images, make sure you regularly `docker pull` the nearest dependent image -- in this case, `ortussolutions/commandbox`. 
+{% hint style="info" %}
+If you regularly build your own Docker images, make sure you regularly `docker pull` the nearest dependent image -- in this case, `ortussolutions/commandbox`.
 {% endhint %}
 
 For this exercise, we'll make two different versions of a custom image, `tag` them, and store them on Docker Hub.

@@ -17,7 +17,7 @@ Start by installing [Docker CE](https://store.docker.com/search?type=edition&off
 
 Linux users can take advantage of the automated Docker install script at [http://get.docker.com](http://get.docker.com).
 
- **Differences between Docker, Docker for Windows, and Docker for Mac** Docker under Linux is just called "Docker" and refers to two pieces:
+**Differences between Docker, Docker for Windows, and Docker for Mac** Docker under Linux is just called "Docker" and refers to two pieces:
 
 * The Docker daemon \(or "engine"\), running in a "native" environment where it can share resources directly with the host without running a virtual machine.
 * The Docker client, which handles your requests from the command line by authenticating and communicating with the Docker daemon.
