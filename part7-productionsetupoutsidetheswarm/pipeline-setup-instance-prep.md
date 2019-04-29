@@ -1,4 +1,4 @@
-# Database Setup: Instance Prep
+# Pipeline Setup: Instance Prep
 
 **Time Required: 5-10 Minutes \(depending on whether you use Domain/DNS control\)**
 

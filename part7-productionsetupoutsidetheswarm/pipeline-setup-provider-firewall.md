@@ -1,4 +1,2 @@
-# Database Setup: Provider Firewall
-
-
+# Pipeline Setup: Provider Firewall
 

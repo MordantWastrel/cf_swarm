@@ -1,4 +1,4 @@
-# Database Setup: VPN Client
+# Pipeline Setup: VPN Server
 
 ## \(Optional\) VPN Client Setup
 

@@ -1,4 +1,4 @@
-# Database Setup: Microsoft SQL Server
+# Pipeline Setup: Microsoft SQL Server
 
 Time Required: **10-15 Minutes \(Setup: 5-10 Minutes; Data Relocation: 5 Minutes\)**
 
