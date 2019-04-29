@@ -1,40 +1,20 @@
-# Pipeline Setup: VPN Server
+# Pipeline Setup: (Optional) VPN Server
 
-## \(Optional\) VPN Client Setup
-
-{% hint style="info" %}
-### Aside: Not Just Database Setup
-
-If you don't already have a VPN setup, it's an inexpensive \(even free\) and worthwhile investment that simplifies some firewall and security concerns. We recommend the use of a VPN client on every instance you intend to access on a regular basis, but this is not always appropriate depending on your workplace requirements.
-
-For the purposes of this guide, we will assume that you can configure Firewall rules that explicitly allows desirable access and denies access to everyone else. The tools you use to accomplish this are up to you and beyond the scope of the guide.
-{% endhint %}
+Whether and to what extent you need a VPN in your production pipeline will depend on how your company network is configured. Out shop is a virtual office, so our developers have to be able to reach our production instances from anywhere. There are a number of ways to solve this problem, and most providers allow some form of console access right from their web-based control panels; but we'd like our own network path to all the services we're going to set up in the cloud and we don't want to have to be messing with firewall rules every time we add or lose a team member. This means a VPN server and VPN clients on all of our droplets.
 
 ## OpenVPN: Free, Ubiquitious, Not Quite Plug-and-Play
 
-DigitalOcean has an e[xcellent guide on setting up an OpenVPN Server](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-16-04) on Ubuntu. It is powerful and flexible and has a medium-sized learning curve.We recommend a couple of tweaks to the guide:
-
-* [Add the official OpenVPN repository](https://community.openvpn.net/openvpn/wiki/OpenvpnSoftwareRepos) to get the latest stable release; as of April 2018, the Ubuntu repositories are about 9 months behind. This is likely to change with the forthcoming release of Ubuntu 18.04, so if the DigitalOcean guide is updated for 18.04 and OpenVPN 2.4+, you can disregard this section.
-* Your OpenVPN server configuration may need the **multihome** option \(just add **multihome** on a line by itself anywhere in the **.conf** file\) or else TCP rather than UDP due to DigitalOcean's networking implementation. 
-
-If you do use the latest OpenVPN release \(2.4 rather than 2.3 in the Ubuntu repository\), there are a few easy changes you can make for better performance:
-
-* Replace **tls-auth ta.key 0** with **tls-crypt ta.key** on the server configuration and **&lt;tls-auth&gt;** with **&lt;tls-crypt&gt;** on the client configuration \(and in the **make\_config.sh** script\).
-* Replace **comp-lz0** with **compress lz4** on both the server and client configurations as **comp-lz0** is deprecated.
+DigitalOcean has an [excellent guide on setting up an OpenVPN Server](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-18-04) on Ubuntu. It is powerful and flexible and has a medium-sized learning curve. 
 
 {% hint style="info" %}
 ### Aside: Quick 'n Dirty OpenVPN Install
 
 Nyr maintains a "Road Warrior" CLI [OpenVPN installation and management utility](https://github.com/Nyr/openvpn-install) that will get you up and running faster.
-
-Alternatively, there are several OpenVPN-based clients with web-based GUIs, like [Pritunl](http://www.pritunl.com).
 {% endhint %}
 
-## NeoRouter: Easy to Install, Ample Features, Slower
+## Our Recommendation: Pritunl
+There are a number of OpenVPN-derived products that package the same server with accessible management utilities. This is often a trade-off, either in terms of reduced functionality or else paid support, but if you don't have DevOps engineers with dedicated expertise, you'll be well served (as we were) with web-based OpenVPN implementations like [Pritunl](http://www.pritunl.com), whose free tier is adequate for our needs while offering plenty of bells and whistles if and when you need to scale up.
 
-NeoRouter is simpler and easier to administer than OpenVPN, and while it doesn't offer all of the same capabilities, it is more than sufficient for small to medium teams. The free version supports mesh networking, but NeoRouter Pro is affordable and a good fit for hub-and-spoke style networks \(though it requires an always-on server to be running the Server instance, the footprint is quite small\).
+## Configuring Your VPN
 
-* [NeoRouter Client Installation Guide](http://www.neorouter.com/wiki/index.php/NeoRouterWiki:ClientSetup)
-* [NeoRouter Free/Mesh/Pro feature matrix](http://www.neorouter.com/compare)
-* [NeoRouter Download](http://www.neorouter.com/downloads)
-
+For the purposes of this guide, we will assume that you can configure Firewall rules that explicitly allows desirable access over a VPN and denies access to everyone else. The tools you use to accomplish this are up to you and beyond the scope of the guide, but it's trivial to manage even a simple firewall like UFW to allow access to some or all ports over your VPN network interface while blocking access over a public interface. 
