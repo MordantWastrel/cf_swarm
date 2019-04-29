@@ -10,9 +10,9 @@ While DigitalOcean doesn't have a tutorial for installing Microsoft SQL Server, 
 {% hint style="info" %}
 ### Aside: Earlier Versions of Microsoft SQL Server \(or Windows-based SQL Installations\)
 
-If you're not ready \(or licensed\) to use SQL Server 2017 or just don't want to run it on Linux, you'll need a Windows instance. Vultr, Google Cloud, and AWS \(or Lightsail\) all provide these for a marginal additional cost. Some Google-fu will suggest that you can puzzle your way through installing Windows with your own licensing on a DigitalOcean droplet, but as of June 2018 this is unsupported.
+If you're not ready \(or licensed\) to use SQL Server 2017 or just don't want to run it on Linux, you'll need a Windows instance. Vultr, Google Cloud, and AWS \(or Lightsail\) all provide these for a marginal additional cost. Some Google-fu will suggest that you can puzzle your way through installing Windows with your own licensing on a DigitalOcean droplet with a custom image. As of April 2019, this is unsupported, but it is possible.
 
-If you can move to SQL Server 2017 for Linux but don't know where to begin, Microsoft provides an [FAQ for SQL Server on Linux.](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-faq)
+If you can move to SQL Server 2017 (or 2019) for Linux but don't know where to begin, Microsoft provides an [FAQ for SQL Server on Linux.](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-faq)
 {% endhint %}
 
 ## Moving the Default Data, Log, and Master DB Directories
