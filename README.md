@@ -2,13 +2,14 @@
 
 ## Who is This Guide For?
 
-This guide is for you if:
+This is a beginner-to-intermediate level guide intended to help modernize legacy CF deployments or facilitate good habits for new deployments. It might be for you if:
 
 * You manage or maintain Coldfusion applications \(or you want to\)
+* You don't have a dedicated DevOps team that knows all of this already
 * You've heard of containers and perhaps Docker but you don't know a lot about them and what they can do for you
 * You want to modernize your infrastructure and you aren't sure where to begin
 
-The guide assumes an intermediate level of familiarity with Coldfusion and server administration, but even if you're a beginner, we'll provide links to guides for topics we will mention but not cover in depth, like firewall administration or SSH key generation.
+The guide assumes an intermediate level of familiarity with Coldfusion and server administration, but even if you're a beginner, we'll always try to provide links to guides for topics we will mention but not cover in depth.
 
 ## Why This Guide? or: Stop Adopting Pets
 
@@ -41,8 +42,8 @@ One of the goals of this guide is to demonstrate that this is a problem of minds
 ## What You'll Have When You're Finished
 
 * A development environment you can use on Windows, MacOS, or Linux, and easily replicate for others
-* 2 or more cloud-hosted virtual machines at one of several competing infrastructure providers \(one for your database and one for your Docker containers\)
-* Docker images for CF development, staging, and production
-* \(Optional\) A Docker image for a distributed cache
-* An understanding of how to scale your infrastructure when the need arises, both vertically \(feeding CF through embiggening your VM\) and horizontally \(CF clustering, Docker Swarm, and Distributed Caching\)
+* A blueprint for a complete production pipeline in the cloud: database, front-end web server, source repository, container registry, and Docker Swarm
+* Cloud computing instances at one of several competing infrastructure providers to support the above
+* Your own Docker images for CF development and production
+* An understanding of how to scale your infrastructure when the need arises, both vertically \(feeding CF through embiggening your compute instances\) and horizontally \(Distributed CF development, Docker Swarm, and Distributed Caching\)
 
