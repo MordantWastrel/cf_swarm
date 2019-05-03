@@ -54,6 +54,7 @@ Some of the terminology around Docker volumes can be confusing. "Volumes" can re
 
 * A [docker volume](https://docs.docker.com/storage/volumes/), which is a persistent data storage device managed entirely by the Docker daemon, or
 * The `volumes` directive in `docker compose` and `docker stack`, which governs both docker volumes and bind mounts. Both involve persistent storage, but a bind mount takes a directory that already exists on the host and mounts it into the container. This means that the host \(rather than Docker\) is managing the filesystem. Bind mounts are slower than docker volumes -- especially on Windows and MacOS. The benefit of bind mounts is that they allow for easy read and write access between the host and the container, which is what we want for a development environment; on a regular docker volume, you can only copy files between the host and the container through the `docker copy` command, unless your container supports some other form of file sharing \(e.g. NFS\). 
+
 {% endhint %}
 
 Every service that makes use of a volume will have a service-level `volumes` directive that specifies the source and target mount point for each volume it requires.
