@@ -33,7 +33,7 @@ The glue that holds all the pieces together in any CF deployment is Commandbox w
 
 > **\*Adobe Coldfusion Note**
 >
-> As of August 2018, running any version of Adobe Coldfusion through Commandbox will cause CF to detect a J2EE/WAR deployment which is only supported in the Enterprise edition. This issue was [raised during the Public Beta for CF 2018](https://coldfusion.adobe.com/discussion/2479279/) but Adobe declined to address it. They had previously suggested that WAR deployments would not automatically be forced into Enterprise mode for 2018 but that does not appear to have materialized.
+> As of May 2019, running any version of Adobe Coldfusion through Commandbox will cause CF to detect a J2EE/WAR deployment which is only supported in the Enterprise edition. This issue was [raised during the Public Beta for CF 2018](https://coldfusion.adobe.com/discussion/2479279/) but Adobe declined to address it. They had previously suggested that WAR deployments would not automatically be forced into Enterprise mode for 2018 but that does not appear to have materialized.
 
 >Furthermore, even if you do have an Enterprise license, you are limited to 8 containers per license. See [Adobe Coldfusion Docker Licensing](https://coldfusion.adobe.com/2019/03/coldfusion-licensing-docker-containers/) for more information.
 >
