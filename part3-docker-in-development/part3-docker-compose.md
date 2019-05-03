@@ -34,7 +34,7 @@ Let's go through each line of `docker-compose.yml`:
 version: '3.6'  # if no version is specificed then v1 is assumed. Recommend v2 minimum
 ```
 
-The **version** directive indirectly specifies the version of Docker requires to execute the file. It's indirect because the version number doesn't refer to a Docker version, but the reference edition of `docker-compose.yml` that tracks which directives are included and deprecated over time.  Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release.
+The **version** directive indirectly specifies the version of Docker required to execute the file. It's indirect because the version number doesn't refer to a Docker version, but the reference edition of `docker-compose.yml` that tracks which directives are included and deprecated over time.  Which versions of docker-compose.yml map to which versions of the Docker engine are available in the official document reference, but unless you know you have to support an older version of Docker, use a version corresponding to a recent `stable` Docker CE release.
 
 ### volumes \(top level\)
 
