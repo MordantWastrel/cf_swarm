@@ -74,5 +74,10 @@ Look again in your **app-two** folder and you'll see an entire application that 
 If you want to see the startup process for your containers, use `docker logs [container name]` -- in this case, `docker logs cfswarm-mysql`, `docker logs cfswarm-cfml`, and `docker logs cfswarm-two-cfml` -- the last one will show you how Commandbox deploys the application from `box.json`!
 {% endhint %}
 
+### Shutting Down
+To shut down the services we started, open up a second terminal and run `docker-compose down` - or you can `ctrl-c` (break) in your first terminal that is displaying the output of all the containers, and then run `docker-compose down`, though the first method is a little cleaner.
+
+In the future, you can `docker-compose up -d` to start services in the background so you don't tie up your terminal.
+
 In the next section, we'll go step-by-step through the file that coordinates all of our services with Docker: **docker-compose.yml**.
 
