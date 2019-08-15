@@ -124,7 +124,7 @@ Every container is created from an image, and this line specifies the image for 
 
 If no registry address is specified, Docker will first check to see if the image exists locally, and if it doesn't, pull the image from [Docker Hub](http://hub.docker.com). Docker Hub allows unlimited storage of public images and is typically where you'll pull from unless and until you make your own images -- even then, those images usually extend public images from Docker Hub.
 
-If no tag is specified, Docker will default to pulling the `:latest` tag. This can have unintended consequences -- you might upgrade your database or your web server without realizing that you've done so. `:latest` for MySQL is currently version 8, but we'll get MySQL 5.7 because we've specified that tag. The README for a Docker image will usually document available tags \(like the official [Docker Hub page for MySQL](https://hub.docker.com/_/mysql/) does, and a full list is often available under the **tags** link on that page.
+If no tag is specified, Docker will default to pulling the `:latest` tag. This can have unintended consequences -- you might upgrade your database or your web server without realizing that you've done so. `:latest` for MySQL is currently version 8, but we'll get MySQL 5.7 because we've specified that tag. The README for a Docker image will usually document available tags \(like the official [Docker Hub page for MySQL](https://hub.docker.com/_/mysql/) does/), and a full list is often available under the **tags** link on that page.
 
 Only the name of the image is required. For ubiquitous software like mysql or nginx, it may just be the name of the software, but it's often a path to an image \(e.g. **ortussolutions/commandbox**\)
 
@@ -203,7 +203,7 @@ The service-level `networks` directive refers back to the top-level `network` na
 
 ## CF Engine Service
 
-Our CFML service definition uses some of the same directives as the `mysql` service, but but with a few alternatives and additions.
+Our CFML service definition uses some of the same directives as the `mysql` service, but with a few alternatives and additions.
 
 ```text
   cfswarm-cfml:
