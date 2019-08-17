@@ -14,7 +14,7 @@ When we ran `docker-compose up` in the previous section, we created a **containe
 
 When you run the Commandbox image, whether from `docker run` or `docker-compose up`, it pulls each of the dependent image layers from the [Docker Hub](https://www.docker.com/products/docker-hub), a publicly accessible Container Registry. Each layer of the image is downloaded to your local Docker daemon and then cached.
 
-You can create your own images and store them on Docker Hub for free, so long as they're publicly available. We'll cover some alternatives for private container registries in the Appendix.
+You can create your own images and store them on Docker Hub for free, so long as they're publicly available. We'll cover some alternatives for private container registries later in this guide.
 
 {% hint style="warning" %}
 ### Before You Continue: Create a Docker Hub Account
