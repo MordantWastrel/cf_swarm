@@ -38,7 +38,7 @@ NGINX will serve static assets directly and proxy all other requests to the CF c
 
 ## location ~ / proxy\_pass
 
-This line directs NGINX to proxy any request whose request matches the specified extensions to the hostname matching the value of the $cfml\_host variable. Because it is the last `location` directive, it will also proxy any request that doesn't match any other location directive so our SES-friendly requests will land her as well.
+This line directs NGINX to proxy any request whose request matches the specified extensions to the hostname matching the value of the $cfml\_host variable. Because it is the last `location` directive, it will also proxy any request that doesn't match any other location directive so our SES-friendly requests will land here as well.
 
 ## resolver
 
