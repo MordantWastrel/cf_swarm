@@ -1,4 +1,4 @@
-# Summary
+# Table of contents
 
 * [Preface: Who Is This Guide For?](README.md)
 * [About the Author & License](about-the-author-and-license.md)
@@ -23,7 +23,7 @@
   * [Pipeline Setup: Source Control & Container Registry](part7-productionsetupoutsidetheswarm/pipeline-setup-source-control-and-container-registry.md)
   * [Pipeline Setup: Database Prep](part7-productionsetupoutsidetheswarm/pipeline-setup-database-prep/README.md)
     * [Pipeline Setup: MySQL](part7-productionsetupoutsidetheswarm/pipeline-setup-database-prep/pipeline-setup-mysql.md)
-    * [Pipeline Setup: Microsoft SQL Server](part7-productionsetupoutsidetheswarm/pipeline-setup-microsoft-sql-server.md)
+  * [Pipeline Setup: Microsoft SQL Server](part7-productionsetupoutsidetheswarm/pipeline-setup-microsoft-sql-server.md)
   * [Pipeline Setup: Provider Firewall](part7-productionsetupoutsidetheswarm/pipeline-setup-provider-firewall.md)
 * [Part 8: Production Setup \(The Swarm\)](part8-productionsetupinsidetheswarm/README.md)
   * [Container Strategy](part8-productionsetupinsidetheswarm/container-strategy.md)
