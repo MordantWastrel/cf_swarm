@@ -18,9 +18,9 @@ While it is possible to get a cloud Windows instance and run Docker on Windows \
 
 When possible, we include references to Windows resources \(including a cloud infrastructure host that offers them\) and we invite anyone who has been through this process with Windows and IIS to contribute to the guide.
 
-## Requirement \#4: A \(Reasonably\) Modern CF Engine
+## Requirement \#4: A \(Reasonably\) Modern CF Engine; preferably, Lucee 5+
 
-The glue that holds all the pieces together in any CF deployment is Commandbox with the [CFConfig](https://www.forgebox.io/view/commandbox-cfconfig) module. As of March 2018, CFConfig supports the following CF engines:
+The glue that holds all the pieces together in any CF deployment is Commandbox with the [CFConfig](https://www.forgebox.io/view/commandbox-cfconfig) module. As of December 2019, CFConfig supports the following CF engines:
 
 * Adobe Coldfusion 9\*
 * Adobe Coldfusion 10\*
@@ -31,13 +31,21 @@ The glue that holds all the pieces together in any CF deployment is Commandbox w
 * Lucee 5
 * Railo 4.x
 
+Unfortunately, there's a little more to our choice of application engine than CFConfig support. 
+
 > **\*Adobe Coldfusion Note**
 >
-> As of May 2019, running any version of Adobe Coldfusion through Commandbox will cause CF to detect a J2EE/WAR deployment which is only supported in the Enterprise edition. This issue was [raised during the Public Beta for CF 2018](https://coldfusion.adobe.com/discussion/2479279/) but Adobe declined to address it. They had previously suggested that WAR deployments would not automatically be forced into Enterprise mode for 2018 but that does not appear to have materialized.
+> It was the authors' intention that this guide take a vendor-neutral approach, even if we might point out an occasional advantage or shortcoming here and there. Unfortunately, there are several "gotchas" to using the Adobe Coldfusion engine for modern development, whether in Docker or not; some of those gotchas are particular to Docker, but ultimately, **we cannot recommend that any institution or enterprise use Adobe Coldfusion:**
 
->Furthermore, even if you do have an Enterprise license, you are limited to 8 containers per license. See [Adobe Coldfusion Docker Licensing](https://coldfusion.adobe.com/2019/03/coldfusion-licensing-docker-containers/) for more information.
+> **1) Standard licenses cannot be used in production with Commandbox. **As of December 2019, running any version of Adobe Coldfusion through Commandbox will cause CF to detect a J2EE/WAR deployment which is only supported in the Enterprise edition. This issue was [raised during the Public Beta for CF 2018](https://coldfusion.adobe.com/discussion/2479279/) but Adobe declined to address it. They had previously suggested that WAR deployments would not automatically be forced into Enterprise mode for 2018 but that does not appear to have materialized.
+
+>Furthermore, even if you do have an Enterprise license, you are limited to 8 containers per license. See [Adobe Coldfusion Docker Licensing](https://coldfusion.adobe.com/2019/03/coldfusion-licensing-docker-containers/) for more information. (Early indications are that friendlier terms may be coming with the 2020 release; but we've seen early indications not materialize in the final product before.)
 >
-> This doesn't mean you shouldn't Adobe Coldfusion in Docker. It does mean that you can't use Commandbox to deploy it in production unless you have an Enterprise license. This guide is all about Commandbox deployments \(for now\) but Adobe provides [official docker images](https://bintray.com/eaps/coldfusion) for CF 2016 and 2018; the process for building the images is just different \(and a bit less convenient\) because you'll have to edit XML files or else build Commandbox and CFConfig into your image process but not actually run your server with them.
+> **2) Adobe has developed a unique definition of "Software as a Service" that they are employing to demand additional license fees from customers already paying for Enterprise licenses.*** This kerfuffle is described in detail in this Adobe forum thread. The discussion is beyond the scope of this guide, but a conservative takeaway is that the licensing landscape for Adobe Coldfusion is quite complicated, and there are even indications that Adobe is threatening customers that migrate to Lucee with retroactive SaaS license payment demands. 
+
+> Our experience with CF and Docker is almost entirely on the Lucee side, and even were Adobe's licensing positions clearer and friendlier, there just aren't any compelling reasons to prefer Adobe's solution going into 2020. If your business environment requires the use of Adobe Coldfusion, much of this guide will still apply, but we recommend stopping by the CFML Slack (cfml.slack.com) and visiting #docker for some up-to-date information.
+
+> Additionally, this guide is all about Commandbox deployments \(for now\) but Adobe provides [official docker images](https://bintray.com/eaps/coldfusion) for CF 2016 and 2018; the process for building the images is just different \(and a bit less convenient\) because you'll have to edit XML files or else build Commandbox and CFConfig into your image process but not actually run your server with them.
 >
 > For these reasons, the recommended engine for this guide is Lucee. This is primarily a production consideration; the author used ACF11 with Docker in development for &gt; over a year and it is easy to get Adobe Coldfusion working for development or staging environments where licensing isn't an issue.
 
